@@ -41,10 +41,19 @@ function ContactForm() {
         setIsSubmitting(true);
         setError("");
 
+        const apiKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+        if (!apiKey) {
+            console.error("WEB3FORMS_KEY is missing!");
+            setError("Configuration Error: API Key is missing. Please add NEXT_PUBLIC_WEB3FORMS_KEY to your Vercel Environment Variables.");
+            setIsSubmitting(false);
+            return;
+        }
+
         try {
             // Prepare form data for Web3Forms
             const formDataToSend = new FormData();
-            formDataToSend.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY!);
+            formDataToSend.append('access_key', apiKey);
             formDataToSend.append('name', formData.name);
             formDataToSend.append('email', formData.email);
             formDataToSend.append('phone', formData.phone || 'Not provided');
