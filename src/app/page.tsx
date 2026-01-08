@@ -17,14 +17,14 @@ export default function Home() {
 
       <Hero />
 
-      <div className="py-2 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
-        <Marquee className="py-2 [--duration:80s]" repeat={3} pauseOnHover>
+      <div className="py-8 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
+        <Marquee className="py-4 [--duration:80s]" repeat={3} pauseOnHover>
           {[
             "WordPress", "PHP", "React",
             "TailwindCSS", "WooCommerce", "SEO Optimization",
             "Figma", "Webflow", "Elementor", "HTML5", "CSS3", "jQuery"
           ].map((skill, i) => (
-            <span key={i} className="text-xl md:text-4xl font-black uppercase text-black dark:text-white mx-3 md:mx-6">
+            <span key={i} className="text-xl md:text-5xl font-black uppercase text-black dark:text-white mx-3 md:mx-8">
               {skill}
             </span>
           ))}
@@ -66,27 +66,27 @@ export default function Home() {
 
       <section className="py-12 md:py-20 px-6 md:px-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-          <Link href="https://cloverhomes.com.au/" target="_blank" className="order-2 md:order-1 group relative bg-neutral-900 rounded-2xl min-h-[350px] flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+          <Link href="https://aurafurniture.ae/" target="_blank" className="order-2 md:order-1 group relative bg-neutral-900 rounded-2xl min-h-[350px] md:min-h-[500px] flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform duration-500">
             <div className="absolute inset-0">
               <Image
-                src="/projects/clover-homes.webp"
-                alt="Clover Homes Project"
+                src="/projects/aura-furniture.webp"
+                alt="Aura Furniture Project"
                 fill
                 className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
             </div>
-            <div className="relative z-10 p-8">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-3xl font-bold text-white tracking-tight">Clover Homes</h3>
-                <span className="bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest">Featured</span>
+            <div className="relative z-10 p-8 md:p-12">
+              <div className="flex justify-between items-start mb-4 md:mb-6">
+                <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Aura Furniture</h3>
+                <span className="bg-white/20 backdrop-blur-md text-white text-xs md:text-sm px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest">Featured</span>
               </div>
-              <p className="text-white/80 text-lg mb-6 max-w-sm">
-                Professional home builders showcasing premium residential projects with modern design and quality craftsmanship.
+              <p className="text-white/80 text-lg md:text-xl mb-6 md:mb-8 max-w-sm md:max-w-lg">
+                Premium online furniture e-commerce store with modern design and seamless shopping experience.
               </p>
               <div className="flex gap-2">
-                {['Wordpress', 'Real Estate', 'Design'].map(s => (
-                  <span key={s} className="text-xs font-mono text-white/90 bg-black/30 px-3 py-1.5 rounded-full">{s}</span>
+                {['E-commerce', 'Web Design', 'Development'].map(s => (
+                  <span key={s} className="text-xs md:text-sm font-mono text-white/90 bg-black/30 px-3 py-1.5 rounded-full">{s}</span>
                 ))}
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function Home() {
               Featured<br />Works
             </h2>
             <p className="text-lg text-neutral-500 max-w-md">
-              Explore a collection of award-winning websites and applications built for clients globally.
+              Explore a collection of websites and applications built for clients globally.
             </p>
             <Link href="/work" className="inline-flex items-center text-lg font-bold border-b border-black dark:border-white pb-1 w-fit hover:opacity-50 transition-opacity">
               View Portfolio <ArrowRight className="ml-2 h-5 w-5" />

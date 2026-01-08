@@ -250,11 +250,11 @@ export default function WorkPage() {
             <Navbar />
 
             <section ref={containerRef} className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-neutral-200 dark:border-neutral-800 pb-12">
-                    <h1 className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 border-b border-neutral-200 dark:border-neutral-800 pb-12">
+                    <h1 className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none text-center md:text-left">
                         Selected<br />Work
                     </h1>
-                    <p className="text-right text-lg font-mono mt-6 md:mt-0 text-neutral-500">
+                    <p className="text-center md:text-right text-lg font-mono mt-6 md:mt-0 text-neutral-500">
                         (2020 — 2025)
                     </p>
                 </div>

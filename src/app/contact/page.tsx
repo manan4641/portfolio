@@ -46,7 +46,7 @@ function ContactForm() {
             formDataToSend.append('name', formData.name);
             formDataToSend.append('email', formData.email);
             formDataToSend.append('phone', formData.phone || 'Not provided');
-            formDataToSend.append('subject', formData.subject);
+            formDataToSend.append('subject', `Portfolio - Abdul Manan: ${formData.subject}`);
             formDataToSend.append('message', formData.message);
 
             // Send to Web3Forms

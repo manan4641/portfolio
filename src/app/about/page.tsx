@@ -10,7 +10,7 @@ export default function About() {
     return (
         <main className="min-h-screen bg-background">
             <Navbar />
-            <div className="container mx-auto px-6 pt-32 max-w-4xl">
+            <div className="container mx-auto px-6 pt-32 pb-24 max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -19,9 +19,7 @@ export default function About() {
                 >
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">About Me</h1>
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                        I am a seasoned Web Developer with over 6 years of experience in building robust,
-                        scalable websites. My journey has taken me from local startups to international banking clients.
-                        I specialize in WordPress, PHP, and modern frontend technologies.
+                        Results-driven Web Developer (WordPress & Webflow), Web Support Engineer with 7 years of experience delivering high-performing websites, CMS solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, DNS/domain management, CRM form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and SEO performance through responsive upgrades, clean design implementation, and technical fixes.
                     </p>
                 </motion.div>
 
