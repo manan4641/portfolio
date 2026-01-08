@@ -77,9 +77,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
             </div>
             <div className="relative z-10 p-8 md:p-12">
-              <div className="flex justify-between items-start mb-4 md:mb-6">
-                <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Aura Furniture</h3>
-                <span className="bg-white/20 backdrop-blur-md text-white text-xs md:text-sm px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest">Featured</span>
+              <div className="flex flex-col md:flex-row justify-between items-start mb-4 md:mb-6 gap-3 md:gap-0">
+                <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight order-2 md:order-1">Aura Furniture</h3>
+                <span className="bg-white/20 backdrop-blur-md text-white text-xs md:text-sm px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest order-1 md:order-2 self-start md:self-auto">Featured</span>
               </div>
               <p className="text-white/80 text-lg md:text-xl mb-6 md:mb-8 max-w-sm md:max-w-lg">
                 Premium online furniture e-commerce store with modern design and seamless shopping experience.

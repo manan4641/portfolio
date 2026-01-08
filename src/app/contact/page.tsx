@@ -14,6 +14,7 @@ function ContactForm() {
     const [subject, setSubject] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState("");
 
     const [formData, setFormData] = useState({
         name: "",
@@ -38,6 +39,7 @@ function ContactForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError("");
 
         try {
             // Prepare form data for Web3Forms
@@ -58,10 +60,7 @@ function ContactForm() {
             const data = await response.json();
 
             if (data.success) {
-                // Show success message
                 setShowSuccess(true);
-
-                // Reset form after delay
                 setTimeout(() => {
                     setShowSuccess(false);
                     setFormData({
@@ -73,12 +72,12 @@ function ContactForm() {
                     });
                 }, 5000);
             } else {
-                throw new Error('Failed to send');
+                throw new Error(data.message || 'Failed to send message');
             }
 
         } catch (error) {
             console.error('Failed to send email:', error);
-            alert('Failed to send message. Please try again or email me directly at web.abdulmanan@gmail.com');
+            setError('Failed to send message. Please ensure all details are correct or try emailing directly.');
         } finally {
             setIsSubmitting(false);
         }
@@ -171,14 +170,15 @@ function ContactForm() {
             </form>
 
             <AnimatePresence>
+                {/* Success Modal */}
                 {showSuccess && (
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        className="absolute inset-0 z-50 flex items-center justify-center bg-white/80 dark:bg-black/80 backdrop-blur-sm rounded-2xl"
+                        className="absolute inset-0 z-50 flex items-center justify-center bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl"
                     >
-                        <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-2xl flex flex-col items-center text-center max-w-sm mx-4">
+                        <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center max-w-sm mx-4">
                             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6">
                                 <Check className="w-8 h-8 text-white" />
                             </div>
@@ -192,6 +192,33 @@ function ContactForm() {
                                 className="mt-6 text-neutral-500 hover:text-black dark:hover:text-white"
                             >
                                 Close
+                            </Button>
+                        </div>
+                    </motion.div>
+                )}
+
+                {/* Error Modal */}
+                {error && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        className="absolute inset-0 z-50 flex items-center justify-center bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl"
+                    >
+                        <div className="bg-white dark:bg-neutral-900 border border-red-200 dark:border-red-900/30 p-8 rounded-2xl shadow-xl flex flex-col items-center text-center max-w-sm mx-4">
+                            <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-6">
+                                <X className="w-8 h-8 text-red-500" />
+                            </div>
+                            <h3 className="text-2xl font-bold mb-2 text-red-600 dark:text-red-400">Message Failed</h3>
+                            <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+                                {error}
+                            </p>
+                            <Button
+                                onClick={() => setError("")}
+                                variant="outline"
+                                className="mt-6 border-red-200 dark:border-red-900 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20"
+                            >
+                                Try Again
                             </Button>
                         </div>
                     </motion.div>

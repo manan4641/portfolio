@@ -156,7 +156,7 @@ export default function Testimonials() {
                                     className="rounded-full gap-2 bg-black dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:scale-105 transition-all duration-300 shadow-lg"
                                 >
                                     <Linkedin className="w-5 h-5" />
-                                    Read more on LinkedIn
+                                    View on LinkedIn
                                 </Button>
                             </Link>
                         </div>
