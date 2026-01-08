@@ -7,13 +7,13 @@ import { Check, X, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 function ContactForm() {
     const searchParams = useSearchParams();
     const service = searchParams.get("service");
     const [subject, setSubject] = useState("");
     const [showSuccess, setShowSuccess] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -35,31 +35,53 @@ function ContactForm() {
         }
     }, [service]);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
-        // Construct mailto URL
-        const mailtoLink = `mailto:web.abdulmanan@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
-        )}`;
+        try {
+            // Prepare form data for Web3Forms
+            const formDataToSend = new FormData();
+            formDataToSend.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY!);
+            formDataToSend.append('name', formData.name);
+            formDataToSend.append('email', formData.email);
+            formDataToSend.append('phone', formData.phone || 'Not provided');
+            formDataToSend.append('subject', formData.subject);
+            formDataToSend.append('message', formData.message);
 
-        // Open email client
-        window.location.href = mailtoLink;
-
-        // Show success message
-        setShowSuccess(true);
-
-        // Reset form after delay
-        setTimeout(() => {
-            setShowSuccess(false);
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                subject: "",
-                message: "",
+            // Send to Web3Forms
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formDataToSend
             });
-        }, 5000);
+
+            const data = await response.json();
+
+            if (data.success) {
+                // Show success message
+                setShowSuccess(true);
+
+                // Reset form after delay
+                setTimeout(() => {
+                    setShowSuccess(false);
+                    setFormData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        subject: "",
+                        message: "",
+                    });
+                }, 5000);
+            } else {
+                throw new Error('Failed to send');
+            }
+
+        } catch (error) {
+            console.error('Failed to send email:', error);
+            alert('Failed to send message. Please try again or email me directly at web.abdulmanan@gmail.com');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -131,8 +153,20 @@ function ContactForm() {
                     />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full h-16 text-lg bg-black hover:bg-neutral-800 text-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 rounded-xl transition-all font-bold">
-                    Send Message
+                <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="w-full h-16 text-lg bg-black hover:bg-neutral-800 text-white dark:bg-white dark:text-black dark:hover:bg-neutral-200 rounded-xl transition-all font-bold disabled:opacity-50"
+                >
+                    {isSubmitting ? (
+                        <>
+                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            Sending...
+                        </>
+                    ) : (
+                        'Send Message'
+                    )}
                 </Button>
             </form>
 
@@ -148,9 +182,9 @@ function ContactForm() {
                             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-6">
                                 <Check className="w-8 h-8 text-white" />
                             </div>
-                            <h3 className="text-2xl font-bold mb-2">Message Ready!</h3>
+                            <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
                             <p className="text-neutral-500 dark:text-neutral-400">
-                                Look for your email client to send the message to me directly.
+                                Thank you for reaching out! I'll get back to you shortly.
                             </p>
                             <Button
                                 onClick={() => setShowSuccess(false)}

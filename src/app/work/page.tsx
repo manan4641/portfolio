@@ -24,6 +24,15 @@ const projects = [
         gradient: "from-amber-900 to-orange-900"
     },
     {
+        title: 'Aura Furniture',
+        period: 'June 2025 - Nov 2025',
+        description: 'Premium online furniture e-commerce store with modern design and seamless shopping experience.',
+        skills: ['E-commerce', 'Web Design', 'Development'],
+        link: 'https://aurafurniture.ae/',
+        image: '/projects/aura-furniture.webp',
+        gradient: "from-amber-900 to-orange-900"
+    },
+    {
         title: 'Coys Constructions',
         period: 'Apr 2025 - Present',
         description: 'Specialized construction and home building services. Showcasing expertise in residential projects and renovations.',
