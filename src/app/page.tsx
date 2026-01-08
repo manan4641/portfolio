@@ -17,14 +17,14 @@ export default function Home() {
 
       <Hero />
 
-      <div className="py-8 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
-        <Marquee className="py-4 [--duration:80s]" repeat={3} pauseOnHover>
+      <div className="py-1 md:py-8 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
+        <Marquee className="py-1 md:py-4 [--duration:40s]" repeat={3} pauseOnHover>
           {[
             "WordPress", "PHP", "React",
             "TailwindCSS", "WooCommerce", "SEO Optimization",
             "Figma", "Webflow", "Elementor", "HTML5", "CSS3", "jQuery"
           ].map((skill, i) => (
-            <span key={i} className="text-xl md:text-5xl font-black uppercase text-black dark:text-white mx-3 md:mx-8">
+            <span key={i} className="text-lg md:text-5xl font-black uppercase text-black dark:text-white mx-3 md:mx-8">
               {skill}
             </span>
           ))}
@@ -38,7 +38,7 @@ export default function Home() {
               Premium<br />Services
             </h2>
             <p className="text-lg text-neutral-500 max-w-md">
-              We build high-performance digital experiences that convert. From custom development to security audits.
+              I build high-performance digital experiences that convert. From custom development to security audits.
             </p>
             <Link href="/services" className="inline-flex items-center text-lg font-bold border-b border-black dark:border-white pb-1 w-fit hover:opacity-50 transition-opacity">
               View Services <ArrowRight className="ml-2 h-5 w-5" />

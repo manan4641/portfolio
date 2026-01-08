@@ -15,10 +15,10 @@ export default function About() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-16"
+                    className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent text-center">About Me</h1>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">About Me</h1>
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                         Results-driven Web Developer (WordPress & Webflow), Web Support Engineer with 7 years of experience delivering high-performing websites, CMS solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, DNS/domain management, CRM form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and SEO performance through responsive upgrades, clean design implementation, and technical fixes.
                     </p>
                 </motion.div>
