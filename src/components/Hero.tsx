@@ -71,12 +71,12 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={containerRef} className="h-screen w-full flex flex-col justify-center px-6 md:px-12 pt-20 md:pt-16 pb-8 md:pb-16 relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+        <section ref={containerRef} className="min-h-[100dvh] md:h-screen w-full flex flex-col justify-start md:justify-center px-6 md:px-12 pt-32 md:pt-16 pb-8 md:pb-16 relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
             <div className="max-w-7xl w-full mx-auto">
 
 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-                    <h1 ref={textRef} className="text-5xl md:text-[8vw] leading-[0.9] font-black tracking-tighter uppercase dark:text-white text-black shrink-0">
+                    <h1 ref={textRef} className="text-5xl md:text-[8vw] leading-[0.9] font-black tracking-tighter uppercase dark:text-white text-black shrink-0 md:mt-0">
                         <div className="py-2"><span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Senior</span></div>
                         <div className="py-2"><span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Website</span></div>
                         <div className="py-2"><span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Developer</span></div>
@@ -102,6 +102,7 @@ export default function Hero() {
                             alt="Abdul Manan - Experienced WordPress Developer"
                             fill
                             className="object-cover"
+                            priority
                         />
                     </div>
                 </div>
@@ -112,10 +113,13 @@ export default function Hero() {
                     </p>
                     {/* Removed Profile Picture from Bottom */}
 
-                    <div className="hidden md:flex items-center gap-2 animate-bounce">
+                    <button
+                        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                        className="hidden md:flex items-center gap-2 animate-bounce hover:opacity-70 transition-opacity"
+                    >
                         <span className="uppercase text-xs tracking-widest">Scroll</span>
                         <ArrowDownRight size={16} />
-                    </div>
+                    </button>
                 </div>
             </div>
 
