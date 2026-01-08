@@ -40,9 +40,7 @@ export default function Hero() {
                 onStart: () => console.log("Hero: Animation started"),
                 onComplete: () => console.log("Hero: Animation completed"),
                 onUpdate: function () {
-                    if (this.progress() > 0) {
-                        document.body.style.transform = 'translateZ(0)';
-                    }
+
                 },
                 onError: (e: any) => console.error("Hero: Animation error", e)
             });
@@ -71,7 +69,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={containerRef} className="min-h-[100dvh] md:h-screen w-full flex flex-col justify-start md:justify-center px-6 md:px-12 pt-32 md:pt-16 pb-8 md:pb-16 relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
+        <section ref={containerRef} className="min-h-[100dvh] md:h-screen w-full flex flex-col justify-start md:justify-center px-6 md:px-12 pt-32 md:pt-16 pb-0 relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
             <div className="max-w-7xl w-full mx-auto">
 
 

@@ -32,15 +32,7 @@ const projects = [
         image: '/projects/coys-constructions.webp',
         gradient: "from-gray-900 to-slate-800"
     },
-    {
-        title: 'Colver Homes',
-        period: 'Mar 2025 - Present',
-        description: 'Professional home builders website featuring project galleries and service details for varied housing needs.',
-        skills: ['Wordpress', 'Real Estate', 'UI/UX'],
-        link: 'https://colverhomes.com.au',
-        image: '/projects/clover-homes.webp',
-        gradient: "from-stone-800 to-zinc-900"
-    },
+
     {
         title: 'Aegis Real Estate',
         period: 'Aug 2025 - Present',
@@ -101,7 +93,7 @@ const projects = [
         description: 'High-performance automotive brand site with global dealer locator and custom product filtering.',
         skills: ['Automotive', 'E-commerce', 'Performance'],
         link: 'https://eventuri.net',
-        image: '/projects/aura-furniture.webp',
+        image: '/projects/eventuri.jpeg',
         gradient: "from-red-900 to-black"
     },
     {

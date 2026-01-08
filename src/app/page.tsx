@@ -1,12 +1,11 @@
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/ui/marquee";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import WhatsAppButton from "@/components/WhatsAppButton";
-
 const Testimonials = dynamic(() => import("@/components/Testimonials"), {
   loading: () => <div className="py-32 px-6 text-center">Loading testimonials...</div>,
 });
@@ -18,7 +17,7 @@ export default function Home() {
 
       <Hero />
 
-      <div className="py-4 md:py-8 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50">
+      <div className="py-2 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
         <Marquee className="py-2 [--duration:80s]" repeat={3} pauseOnHover>
           {[
             "WordPress", "PHP", "React",
@@ -45,17 +44,39 @@ export default function Home() {
               View Services <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
-          <div className="bg-neutral-100 dark:bg-neutral-900 rounded-2xl p-8 min-h-[250px] flex items-center justify-center">
-            <span className="text-neutral-300 dark:text-neutral-700 font-black text-5xl opacity-20">SERVICES</span>
+          <div className="bg-neutral-100 dark:bg-neutral-900 rounded-2xl p-8 min-h-[250px] flex flex-col justify-center">
+            <h3 className="text-2xl font-bold mb-4">Core Competencies</h3>
+            <ul className="space-y-3">
+              {[
+                "Custom Web Development",
+                "SEO & Performance Optimization",
+                "UI/UX Design & Prototyping",
+                "CMS Migration & Management",
+                "E-commerce Solutions"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center text-neutral-600 dark:text-neutral-400 font-medium">
+                  <div className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white mr-3" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       <section className="py-12 md:py-20 px-6 md:px-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-          <Link href="https://cloverhomes.com.au/" target="_blank" className="order-2 md:order-1 group relative bg-gradient-to-br from-amber-900 to-orange-900 rounded-2xl p-8 min-h-[350px] flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform duration-500">
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-            <div className="relative z-10">
+          <Link href="https://cloverhomes.com.au/" target="_blank" className="order-2 md:order-1 group relative bg-neutral-900 rounded-2xl min-h-[350px] flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+            <div className="absolute inset-0">
+              <Image
+                src="/projects/clover-homes.webp"
+                alt="Clover Homes Project"
+                fill
+                className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            </div>
+            <div className="relative z-10 p-8">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-3xl font-bold text-white tracking-tight">Clover Homes</h3>
                 <span className="bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest">Featured</span>
@@ -117,7 +138,7 @@ export default function Home() {
       <Testimonials />
 
       <Footer />
-      <WhatsAppButton />
+
     </main>
   );
 }

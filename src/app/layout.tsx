@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 import { SmoothScrollWrapper } from "@/components/smooth-scroll-wrapper";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import type { Metadata } from "next";
 
 const inter = Inter({
@@ -13,8 +14,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Abdul Manan - Senior Full Stack Developer | WordPress, Next.js & React Expert',
-    template: '%s | Abdul Manan - Senior Web Developer'
+    default: 'Abdul Manan - Senior Website Developer',
+    template: '%s | Abdul Manan - Senior Website Developer'
   },
   description: 'Senior Website Developer with global experience in UAE, UK, Australia & Pakistan. Specializing in high-performance WordPress, WooCommerce, React, and Next.js solutions.',
   keywords: [
@@ -130,6 +131,7 @@ export default function RootLayout({
           <SmoothScrollWrapper>
             {children}
           </SmoothScrollWrapper>
+          <WhatsAppButton />
         </Providers>
       </body>
     </html>

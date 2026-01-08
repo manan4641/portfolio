@@ -4,8 +4,8 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500">
                 <p>&copy; {new Date().getFullYear()} Abdul Manan. All rights reserved.</p>
                 <div className="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" className="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
-                    <a href="#" className="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
+                    <a href="https://www.linkedin.com/in/abdulmanan-dev/" target="_blank" className="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
+                    <a href="https://github.com/manan4641" target="_blank" className="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
                     <a href="https://www.instagram.com/a.manan_/" target="_blank" className="hover:text-black dark:hover:text-white transition-colors">Instagram</a>
                     <a href="mailto:web.abdulmanan@gmail.com" className="hover:text-black dark:hover:text-white transition-colors">Email</a>
                 </div>
