@@ -16,8 +16,8 @@ const projects = [
 
     {
         title: 'Clover Homes',
-        period: 'Aug 2025 - Nov 2025',
-        description: 'Professional home builders showcasing premium residential projects with modern design and quality craftsmanship.',
+        period: 'April 2025 - Present',
+        description: 'I managed a construction-related website for an Australian client as a dedicated WordPress Developer, handling both front-end and back-end development along with ongoing website maintenance.',
         skills: ['Wordpress', 'Real Estate', 'Design'],
         link: 'https://cloverhomes.com.au/',
         image: '/projects/clover-homes.webp',
@@ -26,7 +26,7 @@ const projects = [
     {
         title: 'Aura Furniture',
         period: 'June 2025 - Nov 2025',
-        description: 'Premium online furniture e-commerce store with modern design and seamless shopping experience.',
+        description: 'Developed a premium online ecommerce furniture store for a Dubai-based client, including custom UI implementation, responsive design,& CMS-based structure.',
         skills: ['E-commerce', 'Web Design', 'Development'],
         link: 'https://aurafurniture.ae/',
         image: '/projects/aura-furniture.webp',
@@ -35,7 +35,7 @@ const projects = [
     {
         title: 'Coys Constructions',
         period: 'Apr 2025 - Present',
-        description: 'Specialized construction and home building services. Showcasing expertise in residential projects and renovations.',
+        description: 'I managed a construction and home building website for an Australian client as a dedicated WordPress Developer, handling both front-end and back-end development along with ongoing website maintenance.',
         skills: ['Wordpress', 'Construction', 'Design'],
         link: 'https://coysconstructions.com.au',
         image: '/projects/coys-constructions.webp',
@@ -54,7 +54,7 @@ const projects = [
     {
         title: 'Matilda May',
         period: 'May 2025 - Jun 2025',
-        description: 'Empowering beauty and confidence. A dedicated platform for face, skin, and hair services.',
+        description: 'Empowering beauty and confidence. A dedicated platform for face, skin, and hair services. Developed a complete WordPress website for a UK-based client while working with Creoforma',
         skills: ['Wordpress', 'Web Design', 'Beauty'],
         link: 'https://matildamay.co.uk',
         image: '/projects/matilda-may.webp',
@@ -63,7 +63,7 @@ const projects = [
     {
         title: 'Anosh Foundation',
         period: 'Mar 2025 - Apr 2025',
-        description: 'Global NGO platform with scalable structure for events, donations, and volunteer management.',
+        description: 'Global NGO platform with scalable structure for events, & donations. Delivered end-to-end WordPress development for a humanitarian foundation website, including CMS setup, page architecture, and front-end implementation.',
         skills: ['Wordpress', 'NGO', 'CMS'],
         link: 'https://anoshfoundation.com/',
         image: '/projects/anosh-foundation.webp',
@@ -251,15 +251,15 @@ export default function WorkPage() {
 
             <section ref={containerRef} className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 border-b border-neutral-200 dark:border-neutral-800 pb-12">
-                    <h1 className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none text-center md:text-left">
-                        Selected<br />Work
+                    <h1 className="text-6xl md:text-8xl font-black uppercase leading-none text-center md:text-left">
+                        Selected<br /><span className="text-neutral-400"> Work </span>
                     </h1>
                     <p className="text-center md:text-right text-lg font-mono mt-6 md:mt-0 text-neutral-500">
-                        (2020 — 2025)
+                        (2019 — Present)
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {projects.map((project, idx) => (
                         <div key={idx} className="project-card group">
                             <Link
@@ -269,7 +269,7 @@ export default function WorkPage() {
                             >
                                 {/* Project Image or Gradient Fallback */}
                                 {project.image ? (
-                                    <div className="w-full aspect-[4/3] rounded-2xl relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+                                    <div className="w-full aspect-[3/2] rounded-2xl relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] mb-4">
                                         <Image
                                             src={project.image}
                                             alt={`${project.title} website screenshot`}
@@ -277,7 +277,7 @@ export default function WorkPage() {
                                             className="object-cover"
                                             sizes="(max-width: 768px) 100vw, 50vw"
                                         />
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+                                        <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors z-10" />
                                         <div className="absolute bottom-8 left-8 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
                                             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium border border-white/20">
                                                 Visit Site <ArrowUpRight className="inline-block ml-1 h-3 w-3" />
@@ -286,7 +286,7 @@ export default function WorkPage() {
                                     </div>
                                 ) : (
                                     <div className={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-br ${project.gradient} p-8 flex flex-col justify-end relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]`}>
-                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                                        <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors" />
                                         <div className="relative z-10 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                                             <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium border border-white/20">
                                                 Visit Site <ArrowUpRight className="inline-block ml-1 h-3 w-3" />
@@ -295,13 +295,13 @@ export default function WorkPage() {
                                         <div className="absolute -top-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
                                     </div>
                                 )}
-
-                                <div>
-                                    <div className="flex justify-between items-start mb-2">
+                                </Link>
+                                <div className="mb-4">
+                                    <div className="flex justify-between items-center mb-3">
                                         <h3 className="text-3xl font-bold tracking-tight">{project.title}</h3>
                                         <span className="font-mono text-sm text-neutral-500">{project.period}</span>
                                     </div>
-                                    <p className="text-neutral-500 text-lg mb-4 line-clamp-2 group-hover:text-black dark:group-hover:text-neutral-300 transition-colors">
+                                    <p className="text-neutral-500 text-lg mb-4 line-clamp-4 group-hover:text-black dark:group-hover:text-neutral-300 transition-colors">
                                         {project.description}
                                     </p>
                                     <div className="flex flex-wrap gap-2">
@@ -312,7 +312,7 @@ export default function WorkPage() {
                                         ))}
                                     </div>
                                 </div>
-                            </Link>
+                            
                         </div>
                     ))}
                 </div>

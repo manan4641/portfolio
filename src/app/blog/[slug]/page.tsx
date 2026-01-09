@@ -10,10 +10,12 @@ import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 
 export default function BlogPost() {
-    const params = useParams();
+    //const params = useParams();
     const router = useRouter();
-    const postId = Number(params.id);
-    const post = posts.find(p => p.id === postId);
+    const params = useParams() as { slug?: string | string[] };
+    const slugParam = params.slug;
+    const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
+    const post = posts.find((p) => p.slug === slug);
 
     if (!post) {
         return (

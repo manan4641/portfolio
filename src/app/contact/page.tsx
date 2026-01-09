@@ -115,7 +115,7 @@ function ContactForm() {
                             required
                             type="email"
                             className="w-full bg-neutral-50 dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-lg py-4 px-4 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all font-medium"
-                            placeholder="you@company.com"
+                            placeholder="xyz@company.com"
                             value={formData.email}
                             onChange={e => setFormData({ ...formData, email: e.target.value })}
                         />
@@ -245,8 +245,8 @@ export default function ContactPage() {
             <section className="pt-40 pb-20 px-6 md:px-12 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-6">Let's Work<br />Together</h1>
-                        <p className="text-xl text-neutral-500">Available for select freelance opportunities.</p>
+                        <h1 className="text-5xl md:text-7xl font-black uppercase mb-6">Let's Work<br />Together</h1>
+                        <p className="text-xl text-neutral-500">Open to permanent opportunities and select freelance work.</p>
                     </div>
 
                     <Suspense fallback={<div>Loading form...</div>}>
