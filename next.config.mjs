@@ -26,6 +26,16 @@ const nextConfig = {
         optimizeCss: true,
         optimizePackageImports: ['lucide-react', '@tabler/icons-react'],
     },
+
+    async redirects() {
+        return [
+          {
+            source: "/work",
+            destination: "/portfolio",
+            permanent: true,
+          },
+        ];
+      },
 };
 
 export default nextConfig;
