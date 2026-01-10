@@ -66,22 +66,22 @@ export default function Home() {
 
       <section className="py-12 md:py-20 px-6 md:px-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-          <Link href="https://aurafurniture.ae/" target="_blank" className="order-2 md:order-1 group relative bg-neutral-900 rounded-2xl min-h-[350px] md:min-h-[500px] flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+          <Link href="https://aurafurniture.ae/" target="_blank" className="order-2 md:order-1 group relative bg-neutral-900 rounded-2xl  aspect-[3/2] flex flex-col justify-end overflow-hidden hover:scale-[1.02] transition-transform duration-500">
             <div className="absolute inset-0">
               <Image
-                src="/projects/aura-furniture.webp"
+                src="/projects/aura-furniture-new.webp"
                 alt="Aura Furniture Project"
                 fill
                 className="object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
             </div>
             <div className="relative z-10 p-8 md:p-12">
-              <div className="flex flex-col md:flex-row justify-between items-start mb-4 md:mb-6 gap-3 md:gap-0">
+              <div className="flex flex-col md:flex-row justify-between items-start lg:items-center mb-4 md:mb-6 gap-3 md:gap-0">
                 <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight order-2 md:order-1">Aura Furniture</h3>
                 <span className="bg-white/20 backdrop-blur-md text-white text-xs md:text-sm px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest order-1 md:order-2 self-start md:self-auto">Featured</span>
               </div>
-              <p className="text-white/80 text-lg md:text-xl mb-6 md:mb-8 max-w-sm md:max-w-lg">
+              <p className="text-white/80 text-md md:text-xl mb-6 md:mb-8 max-w-sm md:max-w-lg">
                 Premium online furniture e-commerce store with modern design and seamless shopping experience.
               </p>
               <div className="flex gap-2">
@@ -107,9 +107,9 @@ export default function Home() {
 
       {/* Experience Section */}
       <section className="py-12 md:py-20 px-6 md:px-12 border-t border-neutral-200 dark:border-neutral-800">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto pt-4 lg:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-6xl font-black tracking-tighter uppercase text-center md:text-left">Experiences</h2>
+            <h2 className="text-3xl md:text-6xl font-black tracking-tighter uppercase text-center md:text-left pb-2 lg:pb-0">Experiences</h2>
             <Link href="/about" className="inline-flex items-center justify-center px-6 py-3 text-base font-bold text-white bg-black dark:bg-white dark:text-black rounded-full hover:opacity-80 transition-opacity mt-6 md:mt-0 mx-auto md:mx-0 group">
               View Full Resume <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
             </Link>

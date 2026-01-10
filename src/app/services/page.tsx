@@ -22,7 +22,7 @@ const pricingData = {
             title: "Landing Page",
             price: "$500",
             description: "Perfect for marketing campaigns or personal portfolios. High-converting and fast.",
-            features: ["Custom One-Page Design", "React Development", "Mobile Responsive", "Basic SEO Setup", "Contact Form Integration"],
+            features: ["Custom One-Page Design", "Fast Development", "Mobile Responsive", "Basic SEO Setup", "Contact Form Integration"],
         },
         {
             title: "Corporate Website",
@@ -115,7 +115,7 @@ export default function ServicesPage() {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase"
+                        className="text-5xl md:text-7xl font-black mb-6 uppercase"
                     >
                         Services & <span className="text-neutral-400">Plans</span>
                     </motion.h1>

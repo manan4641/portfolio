@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: 'https://abdulmanan.live/portfolio',
+            url: `${baseUrl}/portfolio`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,

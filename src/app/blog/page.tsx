@@ -41,7 +41,7 @@ export default function Blog() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 + 0.2 }}
                         >
-                            <Link href={`/blog/${post.id}`} className="block h-full group">
+                            <Link href={`/blog/${post.slug}`} className="block h-full group">
                                 <Card className="h-full flex flex-col bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-2xl overflow-hidden relative">
                                     <CardHeader className="space-y-4">
                                         <div className="mb-2">

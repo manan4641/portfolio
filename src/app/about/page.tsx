@@ -17,9 +17,9 @@ export default function About() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">About Me</h1>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                        Results-driven Web Developer (WordPress & Webflow), Web Support Engineer with 7 years of experience delivering high-performing websites, CMS solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, DNS/domain management, CRM form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and SEO performance through responsive upgrades, clean design implementation, and technical fixes.
+                    <h1 className="text-5xl md:text-7xl font-black uppercase mb-8 bg-clip-text">About <span className="text-neutral-400">Me</span></h1>
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                        Results-driven Web Developer (<b>WordPress & Webflow</b>), Web Support Engineer with <b>7+ years</b> of experience delivering high-performing websites, <b>CMS</b> solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, <b>DNS/domain</b> management, <b>CRM</b> form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and <b>SEO</b> performance through responsive upgrades, clean design implementation, and technical fixes.
                     </p>
                 </motion.div>
 

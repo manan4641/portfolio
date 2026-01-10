@@ -71,7 +71,7 @@ export default function Portfolio() {
         <section id="portfolio" ref={containerRef} className="py-32 px-6 md:px-12 bg-white dark:bg-black text-black dark:text-white">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-neutral-200 dark:border-neutral-800 pb-8">
-                    <h2 className="text-4xl md:text-8xl font-black tracking-tighter uppercase">Selected<br />Work</h2>
+                    <h2 className="text-4xl md:text-8xl font-black uppercase">Selected<br />Work</h2>
                     <p className="text-right text-sm font-mono mt-4 md:mt-0">(2022 — 2025)</p>
                 </div>
 

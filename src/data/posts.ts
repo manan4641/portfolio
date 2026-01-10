@@ -1,6 +1,7 @@
 
 export interface BlogPost {
     id: number;
+    slug: string;
     title: string;
     excerpt: string;
     content: string;
@@ -12,29 +13,42 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
     {
         id: 1,
-        title: "Migrating Legacy WordPress Sites to High-Performance Environments",
-        excerpt: "Lessons learned from migrating 50+ corporate websites. How to handle DNS, SSL, and database integrity while minimizing downtime.",
-        date: "March 15, 2024",
-        category: "DevOps",
-        readTime: "8 min read",
+        slug: "migrate-legacy-wordpress-sites-to-high-performance-enviroments",
+        title: "How to Migrate Legacy WordPress Sites to High-Performance Hosting (Without Downtime)",
+        excerpt: "Lessons learned from migrating 40+ corporate websites. How to handle DNS, SSL, and database integrity while minimizing downtime.",
+        date: "December 18, 2025",
+        category: "DevOps, Migration",
+        readTime: "6 min read",
         content: `
             <p>Migration isn't just about moving files. It's about ensuring data integrity and improving performance in the process. Over the last year, I've managed end-to-end migrations for clients ranging from NGOs to multinational corporations.</p>
             
-            <h2>The Pre-Migration Audit</h2>
-            <p>Before touching a single file, I conduct a full audit. This involves checking active plugins, database size, and potential conflicts. Cleaning up the database *before* migration can reduce the transfer size by up to 40%.</p>
+            <h2>Pre-Migration Audit (What I Check First)</h2>
+            <p>Before I move anything, I run a complete migration audit to avoid surprises later. This includes:
+            Reviewing active plugins and theme dependencies
+            Checking database size and cleanup opportunities
+            Identifying plugin conflicts, PHP version issues, and server limitations
+        
+            In many cases, cleaning and optimising the database before migration reduces the total transfer size by up to 40%, which speeds up the move and lowers the chance of errors.</p>
 
-            <h2>DNS and SSL Management</h2>
-            <p>The most nerve-wracking part of any migration is the DNS propagation. I always lower the TTL (Time To Live) 24 hours in advance to ensure quick switching. Setting up SSL certificates on the staging environment beforehand prevents the dreaded 'Not Secure' warning upon launch.</p>
+            <h2>DNS and SSL Setup (Avoid Downtime and “Not Secure” Warnings)</h2>
+            <p>The most stressful stage of any website migration is the DNS switch. To make it smooth, I reduce the DNS TTL (Time To Live) about 24 hours before launch so changes propagate faster.
 
-            <h2>Post-Migration QA</h2>
-            <p>Once the site is live, the real work begins. I run automated crawl tests to check for broken links and monitor error logs for any PHP warnings that might have appeared in the new environment.</p>
+            I also prepare SSL early by installing certificates on the staging environment first. This prevents the common “Not Secure” browser warning and ensures the site launches with HTTPS from day one.</p>
+
+            <h2>Post-Migration QA (Fix Issues Before Users Find Them)</h2>
+            <p>Once the site is live, quality assurance starts immediately. My post-migration checks typically include:
+            Automated crawl tests to detect broken links and missing pages
+            Reviewing server and WordPress error logs
+            Monitoring for PHP warnings and performance changes in the new environment
+            This final QA step is what turns a “site moved” migration into a reliable, production-ready launch. </p>
         `
     },
     {
         id: 2,
-        title: "Optimizing Core Web Vitals for Elementor Websites",
+        slug: 'optimizing-core-web-vitals-for-elementor-website',
+        title: "Optimizing Core Web Vitals for Elementor Websites(LCP, INP, CLS)",
         excerpt: "Elementor is powerful but can be heavy. Here is how I consistently achieve 90+ Lighthouse scores for my clients using custom optimization strategies.",
-        date: "May 22, 2024",
+        date: "August 21, 2025",
         category: "Performance",
         readTime: "6 min read",
         content: `
@@ -52,26 +66,41 @@ export const posts: BlogPost[] = [
     },
     {
         id: 3,
-        title: "Building Custom Lead Capture Flows with React and GoHighLevel",
-        excerpt: "How I integrated custom React forms with GoHighLevel CRM to increase lead conversion rates by 20% for a real estate client.",
-        date: "July 10, 2024",
-        category: "Development",
-        readTime: "10 min read",
+        slug: "custom-lead-capture-in-wordpress-with-gohighlevel",
+        title: "Custom Lead Capture in WordPress with GoHighLevel API",
+        excerpt: "Replace slow, hard-to-style GoHighLevel embed forms with a fast, custom multi-step lead capture flow inside WordPress...",
+        date: "May 10, 2025",
+        category: "Automation, Development",
+        readTime: "7 min read",
         content: `
-            <p>Standard CRM forms are often ugly and slow. For a recent real estate project, I built a custom multi-step form using React that talks to the GoHighLevel API.</p>
+            <p>Default CRM embed forms can be slow, hard to style, and often look out of place on a modern WordPress website. For a recent real estate project, I replaced the standard GoHighLevel iFrame form with a custom multi-step lead capture flow built in React and connected directly to the GoHighLevel API—resulting in a faster, cleaner, and more conversion-friendly experience.</p>
 
-            <h2>The Architecture</h2>
-            <p>The frontend is a lightweight React component embedded in a WordPress page. It handles validation and state management for a smooth user experience. Upon submission, it sends a payload to a serverless function.</p>
+            <h2>The Architecture (WordPress + React + GoHighLevel)</h2>
+            <p>The frontend is a lightweight React component embedded inside a WordPress page. It manages: </p>
+            <ul> 
+                <li>Multi-step flow and form state</li>
+                <li>Field validation and inline error messaging</li>
+                <li>A smooth UX that feels native to the site </li>
+            </ul>
+            <p>on submission, the form sends a structured payload to a serverless function, which then securely forwards the lead data to GoHighLevel.</p>
 
-            <h2>Security and Validation</h2>
-            <p>Client-side validation is for UX; server-side validation is for security. I implemented rate limiting and sanitization to prevent spam injections, ensuring only high-quality leads reach the CRM.</p>
-
-            <h2>The Result</h2>
-            <p>The custom form loaded 300ms faster than the iframe alternative and allowed for better styling control. The client saw a measurable increase in form completions due to the improved UX.</p>
+            <h2>Security and Validation (Spam Protection Done Right)</h2>
+            <p>Client-side validation helps users complete the form, but server-side validation is essential for security and data quality. To protect the endpoint and keep the CRM clean, I added:
+            <ul>    
+                <li>Server-side validation + sanitisation to prevent injections </li>
+                <li>Rate limiting to reduce spam and bot submissions </li>
+                <li>Controlled payload formatting so only clean, usable leads reach GoHighLevel </li>
+            </ul>     
+            </p>   
+            <h2>The Result (Speed + Styling + Conversions)</h2>
+            <p>Compared to the iFrame version, the custom form, Loaded roughly 300ms faster.
+            Allowed full design control to match the WordPress theme.
+            Improved user experience, which led to a measurable lift in form completions for the client. </p>
         `
     },
     {
         id: 4,
+        slug: "securing-high-traffic-corporate-websites",
         title: "Securing High-Traffic Corporate Websites",
         excerpt: "Security isn't a plugin; it's a mindset. My approach to hardening WordPress sites against brute force attacks and SQL injections.",
         date: "September 05, 2024",
@@ -92,11 +121,12 @@ export const posts: BlogPost[] = [
     },
     {
         id: 5,
+        slug: "the-role-of-technical-seo-in-organic-growth",
         title: "The Role of Technical SEO in Organic Growth",
         excerpt: "How I helped a client grow organic traffic by 60% through site-wide audits, schema markup implementation, and architectural fixes.",
         date: "November 18, 2024",
         category: "SEO",
-        readTime: "9 min read",
+        readTime: "8 min read",
         content: `
             <p>Content is king, but technical SEO is the castle. Without a solid foundation, your content won't rank. I recently helped a client achieve significant growth by fixing their technical debt.</p>
 
