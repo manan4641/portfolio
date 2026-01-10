@@ -98,7 +98,7 @@ export default function Home() {
             <p className="text-lg text-neutral-500 max-w-md">
               Explore a collection of websites and applications built for clients globally.
             </p>
-            <Link href="/work" className="inline-flex items-center text-lg font-bold border-b border-black dark:border-white pb-1 w-fit hover:opacity-50 transition-opacity">
+            <Link href="/portfolio" className="inline-flex items-center text-lg font-bold border-b border-black dark:border-white pb-1 w-fit hover:opacity-50 transition-opacity">
               View Portfolio <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
