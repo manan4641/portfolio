@@ -5,6 +5,7 @@ import { SmoothScrollWrapper } from "@/components/smooth-scroll-wrapper";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -133,6 +134,7 @@ export default function RootLayout({
           </SmoothScrollWrapper>
           <WhatsAppButton />
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );

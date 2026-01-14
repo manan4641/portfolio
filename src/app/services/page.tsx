@@ -20,7 +20,7 @@ const pricingData = {
     web: [
         {
             title: "Landing Page",
-            price: "$500",
+            price: "$399",
             description: "Perfect for marketing campaigns or personal portfolios. High-converting and fast.",
             features: ["Custom One-Page Design", "Fast Development", "Mobile Responsive", "Basic SEO Setup", "Contact Form Integration"],
         },

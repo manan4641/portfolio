@@ -84,7 +84,7 @@ export default function Testimonials() {
                                 ref={videoRef}
                                 src="/testimonial.mp4"
                                 preload="auto"
-                                muted
+                                controls
                                 className="w-full h-full object-cover opacity-100 group-hover:opacity-100 transition-opacity duration-500"
                                 onClick={togglePlay}
                                 playsInline
