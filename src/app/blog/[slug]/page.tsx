@@ -81,9 +81,42 @@ export default function BlogPost() {
                         prose-p:leading-relaxed prose-p:text-muted-foreground
                         prose-strong:text-foreground prose-strong:font-black
                         prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                        prose-li:text-muted-foreground"
+                        prose-li:text-muted-foreground mb-4"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                 />
+                {/* CTA Section */}
+                <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+                className="mt-20 rounded-2xl border border-border bg-secondary/40 p-8 md:p-10"
+                >
+                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                    <div className="max-w-xl">
+                    <h3 className="text-2xl md:text-3xl font-black tracking-tight">
+                        Get Started With Digital Brand Support
+                    </h3>
+                    <p className="mt-2 text-muted-foreground leading-relaxed">
+                        From web development to SEO and performance monitoring, let’s connect and I’ll send a quick plan.
+                    </p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                    <Link href="/contact">
+                        <Button className="rounded-full px-6 py-6 font-black  bg-black hover:opacity-90 transition-opacity">
+                        Book a Free Call
+                        </Button>
+                    </Link>
+
+                    <Link href="/portfolio">
+                        <Button variant="outline" className="rounded-full bg-zinc-100 px-6 py-6 font-black transition-opacity hover:opacity-80 ">
+                        View Work
+                        </Button>
+                    </Link>
+                    </div>
+                </div>
+                </motion.section>
+
             </article>
             <Footer />
         </main>
