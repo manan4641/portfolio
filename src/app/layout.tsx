@@ -42,10 +42,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'Abdul Manan', url: 'https://abdulmanan.dev' }],
   creator: 'Abdul Manan',
   publisher: 'Abdul Manan',
-  // metadataBase: new URL('https://abdulmanan.dev'),
-  // alternates: {
-  //   canonical: '/',
-  // },
+  metadataBase: new URL('https://abdulmanan.dev'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
