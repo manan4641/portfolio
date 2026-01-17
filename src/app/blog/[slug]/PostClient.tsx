@@ -15,6 +15,24 @@ export default function BlogPost() {
     const params = useParams() as { slug?: string | string[] };
     const slugParam = params.slug;
     const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
+
+
+    // ✅ if slug is missing
+    if (!slug) {
+        return (
+        <main className="min-h-screen bg-background flex flex-col">
+            <Navbar />
+            <div className="flex-grow flex items-center justify-center">
+            <div className="text-center">
+                <h1 className="text-4xl font-black mb-4 uppercase">Post Not Found</h1>
+                <Link href="/blog"><Button>Back to Journal</Button></Link>
+            </div>
+            </div>
+            <Footer />
+        </main>
+        );
+    }
+
     const post = posts.find((p) => p.slug === slug);
 
     if (!post) {
