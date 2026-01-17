@@ -17,18 +17,6 @@ export default function BlogPost() {
     const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
     const post = posts.find((p) => p.slug === slug);
 
-    const relatedPosts = posts
-    .filter((p) => p.slug !== post.slug)
-    .filter((p) => p.category === post.category)
-    .slice(0, 3);
-
-    const latestPosts = posts
-    .filter((p) => p.slug !== post.slug)
-    .slice(0, 3);
-
-    const recommendedPosts = relatedPosts.length ? relatedPosts : latestPosts;
-
-
     if (!post) {
         return (
             <main className="min-h-screen bg-background flex flex-col">
@@ -45,6 +33,16 @@ export default function BlogPost() {
             </main>
         );
     }
+
+    const relatedPosts = posts
+    .filter((p) => p.slug !== post.slug)
+    .filter((p) => p.category === post.category)
+    .slice(0, 3);
+
+    const latestPosts = posts
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 3);
+    const recommendedPosts = relatedPosts.length ? relatedPosts : latestPosts;
 
     return (
         <main className="min-h-screen bg-background text-foreground">
