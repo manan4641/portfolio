@@ -9,18 +9,14 @@ import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 
-type PostClientProps = {
-    slug: string;
-};
+type Props = { slug: string };
   
-
-export default function PostClient({ slug }: PostClientProps) {
+export default function PostClient({ slug }: Props) {
     //const params = useParams();
-   
 
-    const post = posts.find((p) => p.slug === slug);
+    const foundPost = posts.find((p) => p.slug === slug);
 
-    if (!post) {
+    if (!foundPost) {
         return (
             <main className="min-h-screen bg-background flex flex-col">
                 <Navbar />
@@ -36,10 +32,11 @@ export default function PostClient({ slug }: PostClientProps) {
             </main>
         );
     }
-    const postSafe = post;
+ 
+    const post = foundPost;
     const relatedPosts = posts
-    .filter((p) => p.slug !== postSafe.slug)
-    .filter((p) => p.category === postSafe.category)
+    .filter((p) => p.slug !== post.slug)
+    .filter((p) => p.category === post.category)
     .slice(0, 3);
 
     const latestPosts = posts
