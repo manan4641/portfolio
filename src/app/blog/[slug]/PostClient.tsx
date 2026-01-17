@@ -109,7 +109,7 @@ export default function PostClient({ slug }: Props) {
                     <h3 className="text-2xl md:text-3xl font-black tracking-tight text-foreground dark:text-neutral-200">
                         Get Started With Digital Brand Support
                     </h3>
-                    <p className="mt-2 text-muted-foreground leading-relaxed dark:text-neutral-200">
+                    <p className="mt-2 text-muted-foreground leading-relaxed dark:text-neutral-400">
                         From web development to SEO and performance monitoring, let’s connect and I’ll send a quick plan.
                     </p>
                     </div>
