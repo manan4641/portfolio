@@ -36,10 +36,10 @@ export default function PostClient({ slug }: PostClientProps) {
             </main>
         );
     }
-
+    const postSafe = post;
     const relatedPosts = posts
-    .filter((p) => p.slug !== post.slug)
-    .filter((p) => p.category === post.category)
+    .filter((p) => p.slug !== postSafe.slug)
+    .filter((p) => p.category === postSafe.category)
     .slice(0, 3);
 
     const latestPosts = posts
