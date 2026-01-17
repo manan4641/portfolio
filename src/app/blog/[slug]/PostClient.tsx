@@ -102,27 +102,27 @@ export default function PostClient({ slug }: Props) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.5 }}
-                className="mt-14 md:mt-20 mb-4 rounded-2xl border border-border bg-neutral-50 p-6 md:p-10"
+                className="mt-14 md:mt-20 mb-4 rounded-2xl border border-border bg-neutral-50 dark:bg-neutral-900 p-6 md:p-10"
                 >
                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                     <div className="max-w-xl">
-                    <h3 className="text-2xl md:text-3xl font-black tracking-tight">
+                    <h3 className="text-2xl md:text-3xl font-black tracking-tight text-foreground dark:text-neutral-200">
                         Get Started With Digital Brand Support
                     </h3>
-                    <p className="mt-2 text-muted-foreground leading-relaxed">
+                    <p className="mt-2 text-muted-foreground leading-relaxed dark:text-neutral-200">
                         From web development to SEO and performance monitoring, let’s connect and I’ll send a quick plan.
                     </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact">
-                        <Button className="rounded-full px-6 py-6 font-black  bg-black hover:opacity-90 transition-opacity">
+                        <Button className="rounded-full px-6 py-6 font-black dark:text-neutral-200 bg-black hover:opacity-90 transition-opacity dark:hover:bg-neutral-300 dark:hover:text-neutral-800">
                         Book a Free Call
                         </Button>
                     </Link>
 
                     <Link href="/portfolio">
-                        <Button variant="outline" className="rounded-full bg-zinc-100 px-6 py-6 font-black transition-opacity hover:opacity-80 ">
+                        <Button variant="outline" className="rounded-full bg-zinc-100 px-6 py-6 font-black dark:text-neutral-800 transition-opacity hover:opacity-80 dark:bg-neutral-300 dark:hover:text-neutral-900  dark:hover:opacity-80">
                         View Work
                         </Button>
                     </Link>
@@ -152,7 +152,7 @@ export default function PostClient({ slug }: Props) {
                         <Link
                             key={p.slug}
                             href={`/blog/${p.slug}`}
-                            className="group rounded-2xl border border-border border-gray-300 bg-background p-5 transition hover:bg-neutral-50"
+                            className="group rounded-2xl border border-border border-gray-300 bg-background p-5 transition hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800"
                         >
                             <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
                             <span className="inline-flex items-center gap-1">
@@ -164,7 +164,7 @@ export default function PostClient({ slug }: Props) {
                             </span>
                             </div>
 
-                            <h4 className="mt-3 font-black leading-snug tracking-tight group-hover:underline">
+                            <h4 className="mt-3 font-black leading-snug tracking-tight dark:text-neutral-200 group-hover:underline">
                             {p.title}
                             </h4>
 
