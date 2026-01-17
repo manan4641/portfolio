@@ -22,8 +22,8 @@ export const posts: BlogPost[] = [
         content: `
             <p>Migration isn't just about moving files. It's about ensuring data integrity and improving performance in the process. Over the last year, I've managed end-to-end migrations for clients ranging from NGOs to multinational corporations.</p>
             
-            <h2>Pre-Migration Audit (What I Check First)</h2>
-            <p>Before I move anything, I run a complete migration audit to avoid surprises later. This includes:
+            <h2 class="text-lg/3">Pre-Migration Audit (What I Check First)</h2>
+            <p class="mb-0">Before I move anything, I run a complete migration audit to avoid surprises later. This includes:
             Reviewing active plugins and theme dependencies
             Checking database size and cleanup opportunities
             Identifying plugin conflicts, PHP version issues, and server limitations

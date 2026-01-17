@@ -17,14 +17,14 @@ export default function Home() {
 
       <Hero />
 
-      <div className="py-1 md:py-8 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
+      <div className="py-3 md:py-7 mb-2 md:mb-5 border-y border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 relative z-20">
         <Marquee className="py-1 md:py-4 [--duration:40s]" repeat={3} pauseOnHover>
           {[
-            "WordPress", "PHP", "React",
-            "TailwindCSS", "WooCommerce", "SEO Optimization",
-            "Figma", "Webflow", "Elementor", "HTML5", "CSS3", "jQuery"
+            "Elementor", "PHP", "WooCommerce", "WordPress",
+            "TailwindCSS", "SEO Optimization", "Figma", "Webflow", 
+            "HTML5", "CSS3", "jQuery", "React",
           ].map((skill, i) => (
-            <span key={i} className="text-lg md:text-5xl font-black uppercase text-black dark:text-white mx-3 md:mx-8">
+            <span key={i} className="text-lg md:text-3xl font-black uppercase text-black dark:text-white mx-3 md:mx-8">
               {skill}
             </span>
           ))}
