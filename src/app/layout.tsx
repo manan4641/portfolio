@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://abdulmanan.dev',
     siteName: 'Abdul Manan - Senior Full Stack Developer',
-    title: 'Abdul Manan - Senior Full Stack Developer | WordPress & Next.js Expert',
+    title: 'Abdul Manan - Senior Full Stack Web Developer | WordPress & Webflow Expert',
     description: 'Senior Website Developer delivering high-performance digital solutions globally (UAE, UK, Australia). Expert in WordPress, Next.js, and Custom Development.',
     images: [
       {

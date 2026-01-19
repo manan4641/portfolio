@@ -12,9 +12,20 @@ export default function Hero() {
 
     useEffect(() => {
         console.log("Hero: Mounting and starting animation");
+
+        if (typeof window === "undefined") return;
+
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+      
+        // ✅ Mobile: make sure hero text is visible (no animation)
+        if (isMobile) {
+          gsap.set(".hero-line", { opacity: 1, y: 0, clearProps: "transform" });
+          return;
+        }
+
+        // ✅ Desktop only animations
         const ctx = gsap.context(() => {
             const lines = document.querySelectorAll(".hero-line");
-            console.log("Hero: Found lines", lines.length);
 
             // Force initial state for Safari
             gsap.set(".hero-line", {
@@ -81,12 +92,12 @@ export default function Hero() {
                     </h1>
 
                     {/* Profile Picture Next to Text */}
-                    <div className="hidden md:block relative w-64 h-64 lg:w-80 lg:h-80 shrink-0 overflow-hidden rounded-full border-4 border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div className="hidden md:block relative w-64 h-64 lg:w-90 lg:h-80 shrink-0 overflow-hidden rounded-full border-4 border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
                         <Image
                             src="/pfp.jpeg"
                             alt="Abdul Manan - Senior Website Developer"
                             fill
-                            className="object-cover"
+                            className="object-cover object-[50%_40%] scale-[1.08]"
                             priority
                         />
                     </div>
@@ -106,7 +117,7 @@ export default function Hero() {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-neutral-200 dark:border-neutral-800 pt-6">
-                    <p ref={subRef} className="max-w-4xl text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 mb-8 md:mb-0 leading-relaxed" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>
+                    <p ref={subRef} className="max-w-4xl text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 mb-8 md:mb-0 leading-relaxed" style={{ transform: 'translate3d(0,0,0)'}}>
                         Senior Web Developer/ Web Support Engineer with 7+ years of experience building, maintaining, and optimizing websites for corporate and international clients. I specialize in WordPress development, Webflow CMS maintenance, performance optimization, security, migrations, and domain/DNS management, delivering stable, high-performing websites in fast-paced environments.
                     </p>
                     {/* Removed Profile Picture from Bottom */}
