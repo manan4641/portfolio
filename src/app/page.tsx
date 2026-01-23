@@ -21,8 +21,8 @@ export default function Home() {
         <Marquee className="py-1 md:py-4 [--duration:40s]" repeat={3} pauseOnHover>
           {[
             "Elementor", "PHP", "WooCommerce", "WordPress",
-            "TailwindCSS", "SEO Optimization", "Figma", "Webflow", 
-            "HTML5", "CSS3", "jQuery", "React",
+            "TailwindCSS", "GA", "Figma", "Webflow", "CRM", 
+            "HTML5", "CSS3", "jQuery", "React", "Framer"
           ].map((skill, i) => (
             <span key={i} className="text-lg md:text-3xl font-black uppercase text-black dark:text-white mx-3 md:mx-8">
               {skill}
@@ -52,7 +52,10 @@ export default function Home() {
                 "SEO & Performance Optimization",
                 "UI/UX Design & Prototyping",
                 "CMS Migration & Management",
-                "E-commerce Solutions"
+                "E-commerce Solutions",
+                "Landing Pages for Lead Gen",
+                "Webflow, Framer and Squarespace Support",
+                "Hosting/DNS"
               ].map((item, i) => (
                 <li key={i} className="flex items-center text-neutral-600 dark:text-neutral-400 font-medium">
                   <div className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white mr-3" />
@@ -80,7 +83,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row justify-between items-start lg:items-center mb-4 md:mb-6 gap-3 md:gap-0">
                 <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tight order-2 md:order-1">Aura Furniture</h3>
                 <span className="bg-white/20 backdrop-blur-md text-white text-xs md:text-sm px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest order-1 md:order-2 self-start md:self-auto">Featured</span>
-              </div>
+              </div>f
               <p className="text-white/80 text-md md:text-xl mb-6 md:mb-8 max-w-sm md:max-w-lg">
                 Premium online furniture e-commerce store with modern design and seamless shopping experience.
               </p>

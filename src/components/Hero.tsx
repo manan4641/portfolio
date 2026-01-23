@@ -83,16 +83,18 @@ export default function Hero() {
         <section ref={containerRef} className="min-h-[100dvh] md:h-screen w-full flex flex-col justify-start md:justify-center px-6 md:px-12 pt-32 md:pt-16 pb-0 relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
             <div className="max-w-7xl w-full mx-auto">
 
-
-                <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-                    <h1 ref={textRef} className="text-5xl md:text-[8vw] leading-[0.9] font-black tracking-tighter uppercase dark:text-white text-black shrink-0 md:mt-0">
-                        <div className="py-2"><span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Senior</span></div>
-                        <div className="py-2"><span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Website</span></div>
-                        <div className="py-2"><span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Developer</span></div>
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+                    <h1 ref={textRef} className="text-5xl md:text-[clamp(3.75rem,6.5vw,7.25rem)] leading-[1.3] md:leading-[1] font-black tracking-tighter uppercase dark:text-white text-black md:mt-0 text-center md:text-left">
+                        <div className="block py-2 flex-1 min-w-0">
+                            <span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Website Developer</span>
+                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}> & Webflow
+                            </span> 
+                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Maintenance</span>
+                        </div>
                     </h1>
 
                     {/* Profile Picture Next to Text */}
-                    <div className="hidden md:block relative w-64 h-64 lg:w-90 lg:h-80 shrink-0 overflow-hidden rounded-full border-4 border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div className="hidden lg:block relative w-80 h-96 lg:w-90 lg:h-96 shrink-0 overflow-hidden rounded-full border-4 border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
                         <Image
                             src="/pfp.jpeg"
                             alt="Abdul Manan - Senior Website Developer"
@@ -104,21 +106,21 @@ export default function Hero() {
                 </div>
 
                 {/* Mobile Profile Pic (below text) */}
-                <div className="md:hidden w-full flex justify-center my-8">
-                    <div className="relative w-48 h-48 shrink-0 overflow-hidden rounded-full border-4 border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                <div className="lg:hidden w-full flex justify-center my-8">
+                    <div className="relative w-48 h-64 shrink-0 overflow-hidden rounded-full border-4 border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
                         <Image
                             src="/pfp.jpeg"
                             alt="Abdul Manan - Experienced WordPress Developer"
                             fill
                             className="object-cover"
-                            priority
+                            priority                      
                         />
                     </div>
                 </div>
-
+                <h2 className="max-w-4xl font-bold text-neutral-600 dark:text-neutral-400 md:text-xl text-center lg:text-left mt-6"> A portfolio documenting my journey as a web developer (WordPress, Webflow, Framer) </h2>    
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-neutral-200 dark:border-neutral-800 pt-6">
-                    <p ref={subRef} className="max-w-4xl text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 mb-8 md:mb-0 leading-relaxed" style={{ transform: 'translate3d(0,0,0)'}}>
-                        Senior Web Developer/ Web Support Engineer with 7+ years of experience building, maintaining, and optimizing websites for corporate and international clients. I specialize in WordPress development, Webflow CMS maintenance, performance optimization, security, migrations, and domain/DNS management, delivering stable, high-performing websites in fast-paced environments.
+                    <p ref={subRef} className="max-w-3xl lg:max-w-4xl text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 mb-8 lg:mb-0 leading-relaxed" style={{ transform: 'translate3d(0,0,0)'}}>
+                    Building fast, conversion-focused sites for startups, real estate and construction teams in Australia UAE, UK & Pakistan as a Senior Website Developer/ Web Support Engineer with 7+ years of experience. I specialize in WordPress development, Webflow CMS maintenance, Framer CMS, SquareSpace performance optimization, security, migrations, and domain/DNS management, delivering stable, high-performing websites in fast-paced environments.
                     </p>
                     {/* Removed Profile Picture from Bottom */}
 

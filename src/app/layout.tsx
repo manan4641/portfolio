@@ -16,10 +16,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Abdul Manan - Senior Website Developer',
-    template: '%s | Abdul Manan - Senior Website Developer'
+    default: 'Abdul Manan - Web Development & WordPress Support | UAE, UK, AUstralia',
+    template: '%s | Abdul Manan - Web Development & WordPress Support'
   },
-  description: 'Senior Website Developer with global experience in UAE, UK, Australia & Pakistan. Specializing in high-performance WordPress, WooCommerce, React, and Next.js solutions.',
+  description: 'Senior Website Developer with global experience in UAE, UK, Australia & Pakistan. Specializing in WordPress and Webflow Development and Support!',
   keywords: [
     'Senior Website Developer',
     'Full Stack Developer',
@@ -50,22 +50,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://abdulmanan.dev',
-    siteName: 'Abdul Manan - Senior Full Stack Developer',
-    title: 'Abdul Manan - Senior Full Stack Web Developer | WordPress & Webflow Expert',
-    description: 'Senior Website Developer delivering high-performance digital solutions globally (UAE, UK, Australia). Expert in WordPress, Next.js, and Custom Development.',
+    siteName: 'Abdul Manan - Senior Website Developer',
+    title: 'Abdul Manan - Senior Web Developer | WordPress & Webflow Expert',
+    description: 'Senior Website Developer delivering high-performance digital solutions globally (UAE, UK, Australia). Expert in WordPress, Webflow, and Custom Development.',
     images: [
       {
         url: '/pfp.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Abdul Manan - Senior Full Stack Developer',
+        alt: 'Abdul Manan - Senior Web Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Abdul Manan - Professional Website Developer in Pakistan',
-    description: 'Experienced WordPress & Next.js developer building high-performance websites for businesses globally.',
+    description: 'Experienced WordPress & Webflow developer building high-performance websites for businesses globally.',
     images: ['/pfp.jpeg'],
     creator: '@abdulmanan',
   },
@@ -95,7 +95,7 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Abdul Manan',
     url: 'https://abdulmanan.dev',
-    jobTitle: 'Senior Full Stack Developer',
+    jobTitle: 'Senior Website Developer',
     description: 'Senior Website Developer with global experience (UAE, UK, Australia, Pakistan). Specializing in high-performance WordPress, WooCommerce, React, and Next.js solutions.',
     address: {
       '@type': 'PostalAddress',
