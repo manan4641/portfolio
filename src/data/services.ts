@@ -1,0 +1,78 @@
+export const services = [
+    {
+        title: "Landing Page",
+        price: "$399",
+        description: "Perfect for marketing campaigns or personal portfolios. High-converting and fast.",
+        features: ["Custom One-Page Design", "Fast Development", "Mobile Responsive", "Basic SEO Setup", "Contact Form Integration"],
+    },
+    {
+        title: "Corporate Website",
+        price: "$1,500",
+        description: "A complete multi-page website to establish your business presence online.",
+        features: ["Up to 10 Pages", "CMS Integration (WordPress)", "Advanced Animations", "Performance Optimization", "Analytics Setup"],
+        popular: true,
+    },
+    {
+        title: "E-Commerce",
+        price: "$3,000",
+        description: "Full-scale online store with secure payments and inventory management.",
+        features: ["WooCommerce or Shopify", "Payment Gateway Setup", "Product Management", "User Accounts", "Admin Dashboard Training"],
+    },
+    {
+        title: "Core Design",
+        price: "$800",
+        description: "Essential UI design for small projects or landing pages.",
+        features: ["Home + 2 Inner Pages", "Figma Source File", "Mobile & Desktop Views", "basic Style Guide", "2 Revision Rounds"],
+    },
+    {
+        title: "Full App/Web Design",
+        price: "$2,000",
+        description: "Complete design system and screens for complex web apps.",
+        features: ["User Flow & Wireframing", "Interactive Prototypes", "Comprehensive Design System", "Developer Handoff", "Unlimited Revisions"],
+        popular: true,
+    },
+    {
+        title: "Brand Identity",
+        price: "$600",
+        description: "Stand out with a unique brand voice and visual identity.",
+        features: ["Logo Design", "Typography & Color Palette", "Social Media Kits", "Brand Guidelines PDF", "Business Card Design"],
+    },
+    {
+        title: "SEO Audit",
+        price: "$399",
+        description: "One-time deep dive into your site's health and rankings.",
+        features: ["Technical SEO Analysis", "Keyword Opportunity Report", "Competitor Analysis", "Speed Optimization Tips", "Actionable Roadmap"],
+    },
+    {
+        title: "Growth Starter",
+        price: "$749/mo",
+        description: "Monthly optimization to start climbing the search results.",
+        features: ["Target top 10 Keywords", "On-Page Optimization", "2 Blog Posts/Month", "Monthly Performance Report", "Google My Business"],
+    },
+    {
+        title: "Market Domination",
+        price: "$1,500/mo",
+        description: "Aggressive strategy for competitive markets.",
+        features: ["Target top 30+ Keywords", "Technical SEO Maintenance", "4 Blog Posts/Month", "Backlink Strategy", "Dedicated Account Manager"],
+        popular: true,
+    },
+    {
+        title: "Hosting & DNS",
+        price: "$149",
+        description: "One-time setup for your domain and server infrastructure.",
+        features: ["Domain Connection", "SSL Certificate Setup", "Cloudflare Integration", "Professional Email Setup", "DNS Propagation Checks"],
+    },
+    {
+        title: "Monthly Care",
+        price: "$249/mo",
+        description: "Peace of mind knowing your site is secure and up to date.",
+        features: ["Weekly Backups", "Plugin/Core Updates", "Uptime Monitoring", "Security Scans", "1 Hour Content Edits"],
+        popular: true,
+    },
+    {
+        title: "Priority Ops",
+        price: "$449/mo",
+        description: "Dedicated DevOps and support for mission-critical sites.",
+        features: ["Daily Backups", "24/7 Priority Support", "Performance Tuning", "Server Management", "Emergency Fixes Included"],
+    },
+];

@@ -10,7 +10,7 @@ export default function About() {
     return (
         <main className="min-h-screen bg-background">
             <Navbar />
-            <div className="container mx-auto px-6 pt-32 pb-24 max-w-4xl">
+            <div className="container mx-auto px-6 pt-40 pb-20 max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -18,12 +18,12 @@ export default function About() {
                     className="text-center mb-16"
                 >
                     <h1 className="text-5xl md:text-7xl font-black uppercase mb-8 bg-clip-text">About <span className="text-neutral-400">Me</span></h1>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                    <p className="text-md md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                         Results-driven Web Developer (<b>WordPress & Webflow</b>), Web Support Engineer with <b>7+ years</b> of experience delivering high-performing websites, <b>CMS</b> solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, <b>DNS/domain</b> management, <b>CRM</b> form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and <b>SEO</b> performance through responsive upgrades, clean design implementation, and technical fixes.
                     </p>
                 </motion.div>
 
-                <section className="relative pl-8 md:pl-0">
+                <section className="relative pl-1 md:pl-0">
                     <h2 className="text-2xl font-bold mb-8 border-b pb-2 inline-block">Experience</h2>
                     <div className="space-y-12 border-l-2 border-border ml-2 md:ml-0 pl-8 md:pl-12 relative">
                         {experience.map((job, idx) => (
@@ -39,7 +39,7 @@ export default function About() {
                                 <div className="absolute -left-[43px] md:-left-[59px] top-2 w-5 h-5 bg-background border-2 border-primary rounded-full z-10" />
 
                                 <Card className="border-border hover:border-primary transition-colors">
-                                    <CardContent className="p-6">
+                                    <CardContent className="p-5 md:p-6">
                                         <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
                                             <div>
                                                 <h3 className="text-xl font-bold text-foreground">{job.role}</h3>

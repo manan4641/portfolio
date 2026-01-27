@@ -30,6 +30,15 @@ const awards = [
         image: '/awards/High-Achiver-Award.jpeg', // Placeholder path
         type: 'Award',
         verificationLink: 'https://drive.google.com/file/d/1CCJyS3srLcAVPSywP5T5npZmz-g5GV1K/view?usp=sharing'
+    },
+    {
+        title: 'Consistent Performace Award',
+        issuer: 'Noxlumyn',
+        date: '2025',
+        description: 'I was honored with the Consistent Performace Award by Noxlumyn in recognition of my consistency in performance.',
+        image: '/awards/High-Achiver-Award.jpeg', // Placeholder path
+        type: 'Award',
+        verificationLink: 'https://www.linkedin.com/posts/abdulmanan-dev_grateful-for-the-recognition-it-really-activity-7364222819863277570-NuCC?utm_source=share&utm_medium=member_desktop&rcm=ACoAACL3o_sBtkkYRrkB-eG7j8c3Fl7t0gwhVlc'
     }
 ];
 
@@ -59,8 +68,9 @@ export default function AwardsClient() {
             <Navbar />
 
             <section ref={containerRef} className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 border-b border-neutral-200 dark:border-neutral-800 pb-12">
-                    <h1 className="text-5xl md:text-7xl font-black uppercase leading-none text-center md:text-left">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-24 border-b border-neutral-200 dark:border-neutral-800 pb-12">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-[1.25] md:leading-none
+    tracking-tight text-center md:text-left">
                         Awards &<br /><span className="text-neutral-400"> Certifications </span>
                     </h1>
                     <p className="text-center md:text-right text-lg font-mono mt-6 md:mt-0 text-neutral-500">
@@ -82,10 +92,10 @@ export default function AwardsClient() {
                                 <span className="font-mono text-sm text-neutral-500">{item.date}</span>
                             </div>
 
-                            <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+                            <h3 className="text-xl md:text-2xl font-bold mb-2">{item.title}</h3>
                             <p className="font-medium text-neutral-500 mb-4">{item.issuer}</p>
 
-                            <p className="text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed flex-grow">
+                            <p className="text-neutral-600 md:text-lg dark:text-neutral-400 mb-8 leading-relaxed flex-grow">
                                 {item.description}
                             </p>
 
