@@ -27,7 +27,7 @@ const STATIC_PAGES: SearchResult[] = [
     { id: "4", title: "Awards & Certifications", description: "My professional achievements.", href: "/awards", category: "Page" },
     { id: "5", title: "Allied Bank", description: "Real estate website development.", href: "https://abl.com/", category: "Project" },
     { id: "6", title: "Aura Furniture", description: "E-commerce furniture store.", href: "https://aurafurniture.ae/", category: "Project" },
-    { id: "8", title: "Webp Converter Plugin", description: "Best Plugin for converting existing wordpress images to webp format.", href: "/products", category: "Products" },
+    { id: "8", title: "Webp Converter Plugin", description: "Best Plugin for converting existing wordpress images to webp format.", href: "/products", category: "Product" },
 ];
 
 interface SearchModalProps {
