@@ -6,5 +6,3 @@ Disallow: /api/
 # Sitemap location
 Sitemap: https://abdulmanan.dev/sitemap.xml
 
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 10

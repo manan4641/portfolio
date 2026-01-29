@@ -210,6 +210,39 @@ export default function ServicesPage() {
                         ))}
                     </motion.div>
                 </AnimatePresence>
+
+                 {/* CTA Section */}
+                 <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.5 }}
+                    className="mt-14 md:mt-20 mb-4 rounded-2xl border border-border bg-neutral-50 dark:bg-neutral-900 p-6 md:p-10"
+                    >
+                    <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                        <div className="max-w-2xl">
+                        <h3 className="text-2xl md:text-3xl text-center md:text-left font-black text-foreground dark:text-neutral-200">
+                            Get Started With Brand Digital Support
+                        </h3>
+                        <p className="mt-2 text-muted-foreground text-center md:text-left leading-relaxed dark:text-neutral-400">
+                            From web development to SEO, performance monitoring, and DNS/Hosting, let’s connect and I’ll send a quick plan.
+                        </p>
+                        </div>
+
+                        <div className="flex flex-col items-center md:items-start sm:flex-row justify-center md:justify-start gap-3">
+                        <Link href="/contact">
+                            <Button className="rounded-full px-6 py-6 font-black dark:text-neutral-200 bg-black hover:opacity-90 transition-opacity dark:hover:bg-neutral-300 dark:hover:text-neutral-800">
+                            Book a Free Call
+                            </Button>
+                        </Link>
+
+                        <Link href="/awards">
+                            <Button variant="outline" className="rounded-full bg-zinc-100 px-6 py-6 font-black dark:text-neutral-800 transition-opacity hover:opacity-80 dark:bg-neutral-300 dark:hover:text-neutral-900  dark:hover:opacity-80">
+                             View Recognitions
+                            </Button>
+                        </Link>
+                        </div>
+                    </div>
+                </motion.section>
             </section>
 
             <Footer />
