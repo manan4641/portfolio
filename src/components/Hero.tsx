@@ -84,13 +84,18 @@ export default function Hero() {
             <div className="max-w-7xl w-full mx-auto">
 
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
-                    <h1 ref={textRef} className="text-5xl md:text-[clamp(3.75rem,6.5vw,7.25rem)] leading-[1.3] md:leading-[1] font-black tracking-tighter uppercase dark:text-white text-black md:mt-0 text-center md:text-left">
-                        <div className="block py-2 flex-1 min-w-0">
+                    <h1 ref={textRef} className="text-5xl md:text-[clamp(3.75rem,6.5vw,7.25rem)] leading-[1.3] md:leading-[1] font-black tracking-tighter uppercase dark:text-white text-black md:mt-0 text-center md:text-left scan-wrap">
+                        <div className="block scan-clip py-2 flex-1 min-w-0">          
                             <span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Website Developer</span>
                             <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}> & Webflow
                             </span> 
-                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Maintenance</span>
+                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Maintenance</span>                  
                         </div>
+                        {/* corners */}
+                        <span className="scan-corner tl" />
+                        <span className="scan-corner tr" />
+                        <span className="scan-corner bl" />
+                        <span className="scan-corner br" />  
                     </h1>
 
                     {/* Profile Picture Next to Text */}

@@ -19,7 +19,7 @@ export default function About() {
                 >
                     <h1 className="text-5xl md:text-7xl font-black uppercase mb-8 bg-clip-text">About <span className="text-neutral-400">Me</span></h1>
                     <p className="text-md md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                        Results-driven Web Developer (<b>WordPress & Webflow</b>), Web Support Engineer with <b>7+ years</b> of experience delivering high-performing websites, <b>CMS</b> solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, <b>DNS/domain</b> management, <b>CRM</b> form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and <b>SEO</b> performance through responsive upgrades, clean design implementation, and technical fixes.
+                        Results-driven Web Developer (<b>WordPress & Webflow</b>), Web Support Engineer and Web Consultant with <b>7+ years</b> of experience delivering high-performing websites, <b>CMS</b> solutions, and ongoing technical support across multiple industries. Skilled in website maintenance, migrations, <b>DNS/domain</b> management, <b>CRM</b> form integrations (GoHighLevel), performance optimization, and UI design in Figma. Proven ability to improve engagement and <b>SEO</b> performance through responsive upgrades, clean design implementation, and technical fixes.
                     </p>
                 </motion.div>
 

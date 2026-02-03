@@ -39,7 +39,53 @@ const awards = [
         image: '/awards/High-Achiver-Award.jpeg', // Placeholder path
         type: 'Award',
         verificationLink: 'https://www.linkedin.com/posts/abdulmanan-dev_grateful-for-the-recognition-it-really-activity-7364222819863277570-NuCC?utm_source=share&utm_medium=member_desktop&rcm=ACoAACL3o_sBtkkYRrkB-eG7j8c3Fl7t0gwhVlc'
-    }
+    },
+    {
+        title: 'Employee of the Month',
+        issuer: 'Noxlumyn',
+        date: '2025',
+        description: 'I was honored with the Employee of the month Award by Noxlumyn in recognition of hardwork and determination.',
+        image: '', // Placeholder path
+        type: 'Award',
+        verificationLink: 'https://drive.google.com/file/d/1zNizgm7MFvCNSoZwfmMdBG2lJtAkpYUP/view?usp=sharing'
+    },
+    {
+        title: 'The Ultimate Blueprint for WordPress Course',
+        issuer: 'Alison',
+        date: '2024',
+        description: 'I completed the course in WordPress Development Training (Plugins, Performance, SEO)',
+        image: '', // Placeholder path
+        type: 'Certification',
+        verificationLink: 'https://alison.com/certification/check/3a05093b3f'
+    },
+    {
+        title: 'WordPress with Docker Training',
+        issuer: 'Great Learning',
+        date: '2024',
+        description: 'I completed Completed a course on installing and managing WordPress using Docker, offered by Great Learning Academy.',
+        image: '', // Placeholder path
+        type: 'Certification',
+        verificationLink: 'https://www.mygreatlearning.com/certificate/RUDSGQPI'
+    },
+    {
+        title: 'Programming in HTML5 and CSS3',
+        issuer: 'PIRPLE',
+        date: '2022',
+        description: 'I completed Completed a course on installing and managing WordPress using Docker, offered by Great Learning Academy.',
+        image: '', // Placeholder path
+        type: 'Certification',
+        verificationLink: 'https://www.pirple.com/certificates/89c9w68w8h'
+    },
+    {
+        title: 'Web & Graphic Design Cousre',
+        issuer: 'NTB Islamabad',
+        date: '2017',
+        description: 'I sucessfully completed the 3 months Web & Graphic Design course by Technical Training Center (NTB Islamabad).',
+        image: '', // Placeholder path
+        type: 'Certification',
+        verificationLink: 'https://drive.google.com/file/d/1utfaY-cTVwqtJhzTfKNcOvVS56YUES1l/view'
+    },
+
 ];
 
 export default function AwardsClient() {
