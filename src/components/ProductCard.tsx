@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Product } from "@/data/products";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
@@ -16,7 +16,11 @@ interface ProductCardProps {
 export const ProductCard = ({ product }: ProductCardProps) => {
   const [imgError, setImgError] = useState(false);
 
-  const hasImage = !!product.image?.trim();
+  const hasImage = useMemo(() => {
+    const src = product.image?.trim();
+    return !!src && src.startsWith("/"); // ✅ only allow local public paths like "/downloads/....jpg"
+  }, [product.image]);
+
   const showImage = hasImage && !imgError;
 
   return (
