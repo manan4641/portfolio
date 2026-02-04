@@ -16,12 +16,7 @@ interface ProductCardProps {
 export const ProductCard = ({ product }: ProductCardProps) => {
   const [imgError, setImgError] = useState(false);
 
-  const hasImage = useMemo(() => {
-    const src = product.image?.trim();
-    return !!src && src.startsWith("/"); // ✅ only allow local public paths like "/downloads/....jpg"
-  }, [product.image]);
-
-  const showImage = hasImage && !imgError;
+  const imgSrc = product.image?.trim(); // string | undefined
 
   return (
     <motion.div
@@ -32,26 +27,24 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       {/* Image Container */}
-      <div className="relative h-64 w-full overflow-hidden bg-neutral-700 border-b border-white/4">
-        {/* Placeholder (only visible if image missing or error) */}
-        {!showImage && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-950">
-            <span className="text-6xl font-bold text-white/10 font-display">
-              {product.title?.charAt(0)}
-            </span>
-          </div>
-        )}
+        {/* Image Container */}
+        <div className="relative h-64 w-full overflow-hidden bg-neutral-700 border-b border-white/4">
+        {/* Placeholder */}
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-950">
+          <span className="text-6xl font-bold text-white/10 font-display">
+            {product.title.charAt(0)}
+          </span>
+        </div>
 
-        {/* Real image */}
-        {showImage && (
+        {/* ✅ TS will narrow imgSrc here */}
+        {imgSrc && !imgError && (
           <Image
-            src={product.image} // must be like "/downloads/webp-converter.jpg"
+            src={imgSrc}
             alt={product.title}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={() => setImgError(true)}
-            priority={false}
           />
         )}
 
