@@ -29,10 +29,10 @@ export default function Hero() {
 
             // Force initial state for Safari
             gsap.set(".hero-line", {
-                y: 50,
-                opacity: 0,
+                y: 0,
+                opacity: 1,
                 force3D: true,
-                transformStyle: "preserve-3d"
+                willChange: "transform"
             });
 
             // Set initial state for subtitle
@@ -59,12 +59,12 @@ export default function Hero() {
             tl.to(".hero-line", {
                 y: 0,
                 opacity: 1,
-                duration: 0.8,
-                stagger: 0.15,
+                duration: 0.45,
+                stagger: 0.08,
                 ease: "power3.out",
                 force3D: true,
                 transformPerspective: 1000,
-                clearProps: "all"
+                clearProps: "willChange"
             })
                 .to(subRef.current, {
                     y: 0,
@@ -89,7 +89,8 @@ export default function Hero() {
                             <span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Website Developer</span>
                             <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}> & Webflow
                             </span> 
-                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Maintenance</span>                  
+                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Maintenance</span>   
+                            <span className="scan-blur" aria-hidden />                                     
                         </div>
                         {/* corners */}
                         <span className="scan-corner tl" />
@@ -106,6 +107,7 @@ export default function Hero() {
                             fill
                             className="object-cover object-[50%_40%] scale-[1.08]"
                             priority
+                            sizes="(max-width: 768px) 200px, 320px"
                         />
                     </div>
                 </div>
@@ -122,7 +124,10 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-                <h2 className="max-w-4xl font-bold text-neutral-600 dark:text-neutral-400 md:text-xl text-center lg:text-left mt-6"> A portfolio documenting my journey as a web developer (WordPress, Webflow, Framer) </h2>    
+                <h2 className="max-w-4xl font-bold text-neutral-600 dark:text-neutral-400 md:text-xl text-center lg:text-left mt-6">
+                    <span className="typing inline-block align-bottom">
+                        A portfolio documenting my journey as a web developer (WordPress, Webflow, Framer)</span>
+                </h2>    
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-neutral-200 dark:border-neutral-800 pt-6">
                     <p ref={subRef} className="max-w-3xl lg:max-w-4xl text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 mb-8 lg:mb-0 leading-relaxed" style={{ transform: 'translate3d(0,0,0)'}}>
                     Building fast, conversion-focused sites for startups, real estate and construction teams in Australia UAE, UK & Pakistan as a Senior Website Developer/ Web Support Engineer with 7+ years of experience. I specialize in WordPress development, Webflow CMS maintenance, Framer CMS, SquareSpace performance optimization, security, migrations, and domain/DNS management, delivering stable, high-performing websites in fast-paced environments.

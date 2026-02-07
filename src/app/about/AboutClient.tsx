@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 export default function About() {
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-background">     
             <Navbar />
             <div className="container mx-auto px-6 pt-40 pb-20 max-w-4xl">
                 <motion.div
