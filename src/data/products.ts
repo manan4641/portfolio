@@ -16,7 +16,7 @@ export const products: Product[] = [
         //price: "$49",
         image: "/downloads/plugin-banner.jpg", // Placeholder path
         category: "Plugin",
-        link: "/downloads/wpimages-webp.zip"
+        link: "/api/download?file=wpimages-webp.zip&title=WordPress%20Images%20Converter%20to%20WebP"
     },
     {
         id: "2",

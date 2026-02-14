@@ -19,6 +19,20 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   const imgSrc = product.image?.trim(); // string | undefined
 
+  const trackDownload = async () => {
+    try {
+      await fetch("/api/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          event: "product_download_click",
+          meta: { id: product.id, title: product.title, link: product.link },
+        }),
+        keepalive: true,
+      });
+    } catch {}
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -72,7 +86,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
         <div className="mt-auto">
           {product.link ? (
-            <Link href={product.link} target="_blank" className="block" onClick={() => track("product_download_click", { title: product.title, id: product.id })}>
+            <Link href={product.link} target="_blank" prefetch={false} className="block" onClick={trackDownload}>
               <Button
                 className="w-full text-white bg-neutral-900 dark:bg-white dark:text-black hover:opacity-80 font-bold"
                 size="lg"
