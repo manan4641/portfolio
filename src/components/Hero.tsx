@@ -89,7 +89,7 @@ export default function Hero() {
                             <span className="hero-line block" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Website Developer</span>
                             <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}> & Webflow
                             </span> 
-                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Maintenance</span>   
+                            <span className="hero-line block text-neutral-400" style={{ transform: 'translate3d(0,0,0)', opacity: 0 }}>Management</span>   
                             <span className="scan-blur" aria-hidden />                                     
                         </div>
                         {/* corners */}
@@ -124,9 +124,9 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-                <h2 className="max-w-4xl font-bold text-neutral-600 dark:text-neutral-400 md:text-xl text-center lg:text-left mt-6">
+                <h2 className="max-w-fit font-bold text-neutral-600 dark:text-neutral-400 md:text-xl text-center lg:text-left mt-6">
                     <span className="typing inline-block align-bottom">
-                        A portfolio documenting my journey as a web developer (WordPress, Webflow, Framer)</span>
+                    A portfolio showcasing my journey as a Web Designer & Developer across the globe. &nbsp;&nbsp;</span>
                 </h2>    
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 border-t border-neutral-200 dark:border-neutral-800 pt-6">
                     <p ref={subRef} className="max-w-3xl lg:max-w-4xl text-base md:text-lg font-light text-neutral-600 dark:text-neutral-400 mb-8 lg:mb-0 leading-relaxed" style={{ transform: 'translate3d(0,0,0)'}}>

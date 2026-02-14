@@ -17,15 +17,6 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
 
     {
-        title: 'Clover Homes',
-        period: 'April 2025 - Present',
-        description: 'I managed a construction-related website for an Australian client as a dedicated WordPress Developer, handling both front-end and back-end development along with ongoing website maintenance.',
-        skills: ['Wordpress', 'Real Estate', 'Design'],
-        link: 'https://cloverhomes.com.au/',
-        image: '/projects/clover-homes.webp',
-        gradient: "from-amber-900 to-orange-900"
-    },
-    {
         title: 'Aura Furniture',
         period: 'June 2025 - Nov 2025',
         description: 'Developed a premium online ecommerce furniture store for a Dubai-based client, including custom UI implementation, responsive design,& CMS-based structure.',
@@ -35,40 +26,21 @@ const projects = [
         gradient: "from-amber-900 to-orange-900"
     },
     {
-        title: 'Coys Constructions',
-        period: 'Apr 2025 - Present',
-        description: 'I managed a construction and home building website for an Australian client as a dedicated WordPress Developer, handling both front-end and back-end development along with ongoing website maintenance.',
-        skills: ['Wordpress', 'Construction', 'Design'],
-        link: 'https://coysconstructions.com.au',
-        image: '/projects/coys-constructions.webp',
-        gradient: "from-gray-900 to-slate-800"
-    },
-
-    {
-        title: 'Aegis Real Estate',
-        period: 'Aug 2025 - Present',
-        description: 'Developed a full real estate website for a Dubai-based client with custom UI, advanced search, and property listings.',
-        skills: ['Wordpress', 'Divi', 'PHP'],
-        link: 'https://aegisrealestate.ae/',
-        image: '/projects/aegis-real-estate.webp',
-        gradient: "from-blue-900 to-slate-900"
-    },
-    {
-        title: 'Matilda May',
-        period: 'May 2025 - Jun 2025',
-        description: 'Empowering beauty and confidence. A dedicated platform for face, skin, and hair services. Developed a complete WordPress website for a UK-based client while working with Creoforma',
-        skills: ['Wordpress', 'Web Design', 'Beauty'],
-        link: 'https://matildamay.co.uk',
-        image: '/projects/matilda-may.webp',
-        gradient: "from-pink-900 to-rose-900"
-    },
-    {
         title: 'Anosh Foundation',
         period: 'Mar 2025 - Apr 2025',
         description: 'Global NGO platform with scalable structure for events, & donations. Delivered end-to-end WordPress development for a humanitarian foundation website, including CMS setup, page architecture, and front-end implementation.',
         skills: ['Wordpress', 'NGO', 'CMS'],
         link: 'https://anoshfoundation.com/',
         image: '/projects/anosh-foundation.webp',
+        gradient: "from-teal-900 to-cyan-900"
+    },
+    {
+        title: 'Mashnavision',
+        period: 'May 2025 - October 2025',
+        description: 'Designed and developed a high-end automotive website for MashnaVision (A client in Netherlands), combining bold visuals, smooth UX, and a premium brand-focused layout.',
+        skills: ['Wordpress', 'NGO', 'CMS'],
+        link: 'https://autobedrijfmashnavision.nl/',
+        image: '/projects/Mashanvision.webp',
         gradient: "from-teal-900 to-cyan-900"
     },
     {
@@ -108,15 +80,6 @@ const projects = [
         gradient: "from-red-900 to-black"
     },
     {
-        title: 'Luton Connect Taxis',
-        period: 'Dec 2024 - Jan 2025',
-        description: 'Easiest airport taxi service website designed to serve business travelers with quick booking and reliability.',
-        skills: ['Wordpress', 'Transport', 'Booking'],
-        link: 'https://lutonconnecttaxis.com',
-        image: '/projects/luton-connect-taxis.webp',
-        gradient: "from-yellow-900 to-amber-900"
-    },
-    {
         title: 'The Tiles Outlet',
         period: 'Dec 2024 - Mar 2025',
         description: 'Online e-commerce store for luxury tiles for every home and bathroom. Seamless product browsing.',
@@ -142,15 +105,6 @@ const projects = [
         link: 'https://twingroup.uk',
         image: '/projects/twin-group.webp',
         gradient: "from-blue-950 to-indigo-950"
-    },
-    {
-        title: 'Elmari',
-        period: 'Sept 2024 - Oct 2024',
-        description: 'Dedicated business website development with focus on brand identity and user service presentation.',
-        skills: ['Wordpress', 'Business', 'Branding'],
-        link: 'https://elmari.co.uk',
-        image: '/projects/elmari.webp',
-        gradient: "from-indigo-900 to-blue-900"
     },
     {
         title: 'Sunnah Charity',
@@ -223,6 +177,33 @@ const projects = [
         link: 'https://www.golfconnections.dk/',
         image: '/projects/golf-connections.webp',
         gradient: "from-emerald-800 to-green-900"
+    },
+    {
+        title: 'Clover Homes',
+        period: 'April 2025 - Present',
+        description: 'I managed a construction-related website for an Australian client as a dedicated WordPress Developer at One Click Digital, handling both front-end and back-end development along with ongoing website maintenance.',
+        skills: ['Wordpress', 'Real Estate', 'Design'],
+        link: 'https://cloverhomes.com.au/',
+        image: '/projects/clover-homes.webp',
+        gradient: "from-amber-900 to-orange-900"
+    },
+    {
+        title: 'Gengear Generators',
+        period: 'Dec 2025 - Feb 2026',
+        description: 'Successfully built a power management website for an Australian client while working as a dedicated WordPress Developer at One Click Digital. Designed website in Figma and handling both front-end and back-end development along with DNS/Hosting',
+        skills: ['Wordpress', 'Real Estate', 'Design'],
+        link: 'https://gengear.com.au/',
+        image: '/projects/gengear.webp',
+        gradient: "from-amber-900 to-orange-900"
+    },
+    {
+        title: 'Coys Constructions',
+        period: 'Apr 2025 - Present',
+        description: 'I managed a construction and home building website for an Australian client as a dedicated WordPress Developer at One Click Digital, handling both front-end and back-end development along with ongoing website maintenance.',
+        skills: ['Wordpress', 'Construction', 'Design'],
+        link: 'https://coysconstructions.com.au',
+        image: '/projects/coys-constructions.webp',
+        gradient: "from-gray-900 to-slate-800"
     },
 ];
 

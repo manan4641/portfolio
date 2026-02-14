@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
@@ -71,7 +72,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
         <div className="mt-auto">
           {product.link ? (
-            <Link href={product.link} target="_blank" className="block">
+            <Link href={product.link} target="_blank" className="block" onClick={() => track("product_download_click", { title: product.title, id: product.id })}>
               <Button
                 className="w-full text-white bg-neutral-900 dark:bg-white dark:text-black hover:opacity-80 font-bold"
                 size="lg"

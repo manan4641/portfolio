@@ -235,9 +235,9 @@ export default function ServicesPage() {
                             </Button>
                         </Link>
 
-                        <Link href="/awards">
+                        <Link href="/products">
                             <Button variant="outline" className="rounded-full bg-zinc-100 px-6 py-6 font-black dark:text-neutral-800 transition-opacity hover:opacity-80 dark:bg-neutral-300 dark:hover:text-neutral-900  dark:hover:opacity-80">
-                             View Recognitions
+                             View Products
                             </Button>
                         </Link>
                         </div>
