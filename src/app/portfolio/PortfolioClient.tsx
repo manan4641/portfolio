@@ -26,6 +26,15 @@ const projects = [
         gradient: "from-amber-900 to-orange-900"
     },
     {
+        title: 'ARL Home',
+        period: 'Jan 2026 - Feb 2026',
+        description: 'Developed a premium online ecommerce furniture store for a Dubai-based client, including custom UI implementation, responsive design,& CMS-based structure.',
+        skills: ['E-commerce', 'Web Design', 'Web Development'],
+        link: 'https://arlohome.ae/',
+        image: '/projects/ARL-Home.webp',
+        gradient: "from-amber-900 to-orange-900"
+    },
+    {
         title: 'Anosh Foundation',
         period: 'Mar 2025 - Apr 2025',
         description: 'Global NGO platform with scalable structure for events, & donations. Delivered end-to-end WordPress development for a humanitarian foundation website, including CMS setup, page architecture, and front-end implementation.',
