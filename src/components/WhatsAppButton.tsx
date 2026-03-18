@@ -21,6 +21,7 @@ export default function WhatsAppButton() {
                   body: JSON.stringify({
                     event: "whatsapp_click",
                     meta: { location: "floating_button" },
+                    page: "global",
                   }),
                   keepalive: true,
                 });

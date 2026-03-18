@@ -27,6 +27,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         body: JSON.stringify({
           event: "product_download_click",
           meta: { id: product.id, title: product.title, link: product.link },
+          page: "/products",
         }),
         keepalive: true,
       });
