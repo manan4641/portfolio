@@ -4,8 +4,8 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
   const { event, meta } = body || {};
 
-  console.log("[TRACK_EVENT]", {
-    event: body.event,
+  console.info("[TRACK_EVENT]", {
+    event: body.event, meta: body.meta,
     title: body.title,
     file: body.file,
     productId: body.productId,

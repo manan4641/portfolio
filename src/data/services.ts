@@ -1,78 +1,15 @@
-export const services = [
-    {
-        title: "Landing Page",
-        price: "$399",
-        description: "Perfect for marketing campaigns or personal portfolios. High-converting and fast.",
-        features: ["Custom One-Page Design", "Fast Development", "Mobile Responsive", "Basic SEO Setup", "Contact Form Integration"],
-    },
-    {
-        title: "Corporate Website",
-        price: "$1,500",
-        description: "A complete multi-page website to establish your business presence online.",
-        features: ["Up to 10 Pages", "CMS Integration (WordPress)", "Advanced Animations", "Performance Optimization", "Analytics Setup"],
-        popular: true,
-    },
-    {
-        title: "E-Commerce",
-        price: "$3,000",
-        description: "Full-scale online store with secure payments and inventory management.",
-        features: ["WooCommerce or Shopify", "Payment Gateway Setup", "Product Management", "User Accounts", "Admin Dashboard Training"],
-    },
-    {
-        title: "Core Design",
-        price: "$800",
-        description: "Essential UI design for small projects or landing pages.",
-        features: ["Home + 2 Inner Pages", "Figma Source File", "Mobile & Desktop Views", "basic Style Guide", "2 Revision Rounds"],
-    },
-    {
-        title: "Full App/Web Design",
-        price: "$2,000",
-        description: "Complete design system and screens for complex web apps.",
-        features: ["User Flow & Wireframing", "Interactive Prototypes", "Comprehensive Design System", "Developer Handoff", "Unlimited Revisions"],
-        popular: true,
-    },
-    {
-        title: "Brand Identity",
-        price: "$600",
-        description: "Stand out with a unique brand voice and visual identity.",
-        features: ["Logo Design", "Typography & Color Palette", "Social Media Kits", "Brand Guidelines PDF", "Business Card Design"],
-    },
-    {
-        title: "SEO Audit",
-        price: "$399",
-        description: "One-time deep dive into your site's health and rankings.",
-        features: ["Technical SEO Analysis", "Keyword Opportunity Report", "Competitor Analysis", "Speed Optimization Tips", "Actionable Roadmap"],
-    },
-    {
-        title: "Growth Starter",
-        price: "$749/mo",
-        description: "Monthly optimization to start climbing the search results.",
-        features: ["Target top 10 Keywords", "On-Page Optimization", "2 Blog Posts/Month", "Monthly Performance Report", "Google My Business"],
-    },
-    {
-        title: "Market Domination",
-        price: "$1,500/mo",
-        description: "Aggressive strategy for competitive markets.",
-        features: ["Target top 30+ Keywords", "Technical SEO Maintenance", "4 Blog Posts/Month", "Backlink Strategy", "Dedicated Account Manager"],
-        popular: true,
-    },
-    {
-        title: "Hosting & DNS",
-        price: "$149",
-        description: "One-time setup for your domain and server infrastructure.",
-        features: ["Domain Connection", "SSL Certificate Setup", "Cloudflare Integration", "Professional Email Setup", "DNS Propagation Checks"],
-    },
-    {
-        title: "Monthly Care",
-        price: "$249/mo",
-        description: "Peace of mind knowing your site is secure and up to date.",
-        features: ["Weekly Backups", "Plugin/Core Updates", "Uptime Monitoring", "Security Scans", "1 Hour Content Edits"],
-        popular: true,
-    },
-    {
-        title: "Priority Ops",
-        price: "$449/mo",
-        description: "Dedicated DevOps and support for mission-critical sites.",
-        features: ["Daily Backups", "24/7 Priority Support", "Performance Tuning", "Server Management", "Emergency Fixes Included"],
-    },
+// Services page sections. Copy is verbatim from Services.dc.html.
+export type ServiceSection = { id: string; jump: string; h2: string; p: string; items: string[] };
+
+export const SERVICE_SECTIONS: ServiceSection[] = [
+  { id: "wordpress", jump: "WordPress", h2: "Custom WordPress development", p: "Custom WordPress themes and plugins built from your Figma designs or brief. The code is written for your site instead of adapted from a heavy multipurpose theme, so pages load quickly and your team can edit content without breaking layouts.", items: ["Custom themes and templates from Figma", "Custom plugins and functionality", "Elementor and Divi builds", "Simple content editing for your team"] },
+  { id: "woocommerce", jump: "WooCommerce", h2: "WooCommerce development", p: "WooCommerce stores set up or rebuilt around how you sell. Product pages, cart and checkout are kept simple for buyers, and orders, shipping and payments are easy for you to manage day to day.", items: ["Store setup and custom product pages", "Payment gateway and shipping setup", "Cart and checkout improvements", "Ongoing store support"] },
+  { id: "webflow", jump: "Webflow", h2: "Webflow development and CMS management", p: "Webflow sites built from design files with a clean class structure and CMS collections planned up front, so your marketing team can publish pages and posts without a developer. Framer and Squarespace builds are available too.", items: ["Figma to Webflow builds", "CMS collections and templates", "Interactions and animations", "Editor handover for your team"] },
+  { id: "frontend", jump: "Front-end", h2: "Website design and front-end development", p: "Figma designs turned into responsive, accessible front-ends with HTML, CSS and JavaScript. Layouts are checked across screen sizes and browsers before handover.", items: ["Figma to responsive website", "Cross-browser and device testing", "Accessible, semantic markup", "Reusable components"] },
+  { id: "speed", jump: "Speed", h2: "Website speed optimization", p: "An audit of what slows your site down, followed by the fixes: image and font loading, caching, script clean-up and hosting configuration. The aim is passing Core Web Vitals and faster pages for real visitors.", items: ["Core Web Vitals audit", "Image, font and script optimization", "Caching and CDN setup", "Before and after report"] },
+  { id: "seo", jump: "Technical SEO", h2: "Technical SEO", p: "Technical SEO audits and on-page fixes that help search engines crawl and understand your site: page structure, metadata, structured data, redirects and internal links.", items: ["Technical site audit", "Metadata and structured data", "Redirects and XML sitemap", "Search Console setup"] },
+  { id: "support", jump: "Support", h2: "Website maintenance and support", p: "Ongoing website support from a web support specialist. Updates, backups, security hardening, monitoring and small changes are handled monthly or as needed, so your site stays online and current.", items: ["Core, theme and plugin updates", "Backups and uptime monitoring", "Security hardening and fixes", "Content and layout changes on request"] },
+  { id: "migration", jump: "Migration", h2: "Website migration and hosting", p: "Website migration between hosts or platforms, with content, DNS and SSL handled carefully and redirects in place to keep downtime and ranking loss to a minimum.", items: ["Host-to-host migration", "Platform-to-platform migration", "DNS and SSL setup", "Redirect mapping"] },
+  { id: "integrations", jump: "Integrations", h2: "API and CRM integrations", p: "Forms, CRMs, analytics and automation tools connected to your website, so leads and data reach the right place without manual copying.", items: ["CRM and form integrations", "Analytics and tracking setup", "Third-party API connections", "AI and workflow automations"] },
+  { id: "landing-pages", jump: "Landing pages", h2: "Landing pages and conversion optimization", p: "Focused landing pages for campaigns and lead generation, built to load fast and guide visitors to one action.", items: ["Campaign landing pages", "Lead forms and tracking", "Fast, mobile-first builds", "Revisions based on results"] },
 ];

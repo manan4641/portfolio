@@ -13,7 +13,7 @@ export async function GET(req: Request) {
   }
 
   // ✅ This appears in Vercel Logs (Project → Logs)
-  console.log("[DOWNLOAD]", { file, title, time: new Date().toISOString() });
+  console.info("[DOWNLOAD]", { file, title, time: new Date().toISOString() });
 
   // Redirect to the real file in /public/downloads/
   return NextResponse.redirect(new URL(`/downloads/${file}`, url.origin), 302);

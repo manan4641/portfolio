@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /api/
-
-# Sitemap location
-Sitemap: https://abdulmanan.dev/sitemap.xml
-
