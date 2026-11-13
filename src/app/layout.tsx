@@ -1,140 +1,68 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { Providers } from "./providers";
-import { SmoothScrollWrapper } from "@/components/smooth-scroll-wrapper";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL } from "@/data/site";
+import { HOME_TITLE, HOME_DESC, OG_IMAGE } from "@/lib/seo";
 
-const inter = Inter({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-inter',
+  axes: ["opsz"],
+  display: "swap",
+  variable: "--font-bricolage",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Abdul Manan - Web Development & WordPress Support | UAE, UK, AUstralia',
-    template: '%s | Abdul Manan - Web Development & WordPress Support'
-  },
-  description: 'Senior Website Developer with global experience in UAE, UK, Australia & Pakistan. Specializing in WordPress and Webflow Development and Support!',
-  keywords: [
-    'Senior Website Developer',
-    'Full Stack Developer',
-    'WordPress Expert Dubai',
-    'Web Developer UAE',
-    'Next.js Expert',
-    'React Developer',
-    'Remote Web Developer',
-    'WooCommerce Expert',
-    'Headless WordPress',
-    'Custom Web Solutions',
-    'PHP Developer',
-    'TypeScript',
-    'International SEO',
-    'Freelance Web Developer',
-    'Web Development Agency',
-    'Website Maintenance Expert',
-    'Performance Optimization'
-  ],
-  authors: [{ name: 'Abdul Manan', url: 'https://abdulmanan.dev' }],
-  creator: 'Abdul Manan',
-  publisher: 'Abdul Manan',
-  metadataBase: new URL('https://abdulmanan.dev'),
-  alternates: {
-    canonical: '/',
-  },
+  metadataBase: new URL(SITE_URL),
+  title: { default: HOME_TITLE, template: "%s | Abdul Manan" },
+  description: HOME_DESC,
+  applicationName: "Abdul Manan",
+  authors: [{ name: "Abdul Manan", url: SITE_URL }],
+  creator: "Abdul Manan",
+  publisher: "Abdul Manan",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://abdulmanan.dev',
-    siteName: 'Abdul Manan - Senior Website Developer',
-    title: 'Abdul Manan - Senior Web Developer | WordPress & Webflow Expert',
-    description: 'Senior Website Developer delivering high-performance digital solutions globally (UAE, UK, Australia). Expert in WordPress, Webflow, and Custom Development.',
-    images: [
-      {
-        url: '/pfp.jpeg',
-        width: 1200,
-        height: 630,
-        alt: 'Abdul Manan - Senior Web Developer',
-      },
-    ],
+    type: "website",
+    locale: "en_US",
+    siteName: "Abdul Manan",
+    title: HOME_TITLE,
+    description: HOME_DESC,
+    url: "/",
+    images: [OG_IMAGE],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Abdul Manan - Professional Website Developer in Pakistan',
-    description: 'Experienced WordPress & Webflow developer building high-performance websites for businesses globally.',
-    images: ['/pfp.jpeg'],
-    creator: '@abdulmanan',
-  },
+  twitter: { card: "summary_large_image", title: HOME_TITLE, description: HOME_DESC, images: [OG_IMAGE.url] },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
   },
-  verification: {
-    google: 'qOQDuiWHrsJYOnmJO8shSR8CrM2k5xOIItDX43U2Cm0',
-  },
+  verification: { google: "qOQDuiWHrsJYOnmJO8shSR8CrM2k5xOIItDX43U2Cm0" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Abdul Manan',
-    url: 'https://abdulmanan.dev',
-    jobTitle: 'Senior Website Developer',
-    description: 'Senior Website Developer with global experience (UAE, UK, Australia, Pakistan). Specializing in high-performance WordPress, WooCommerce, React, and Next.js solutions.',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'UAE',
-    },
-    knowsAbout: [
-      'WordPress Development',
-      'WooCommerce',
-      'React',
-      'Next.js',
-      'Full Stack Development',
-      'PHP',
-      'TypeScript',
-      'Web Development',
-      'International SEO'
-    ],
-    sameAs: [
-      // Add your social media profiles here
-      'https://github.com/abdulmanan',
-      'https://linkedin.com/in/abdulmanan'
-    ]
-  };
+export const viewport: Viewport = {
+  themeColor: "#0a0e14",
+  colorScheme: "dark",
+};
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+export default function RootLayout({ children, modal }: { children: React.ReactNode; modal: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className={inter.className} suppressHydrationWarning>
-        <GoogleAnalytics />
-        <Providers>
-          <SmoothScrollWrapper>
-            {children}
-          </SmoothScrollWrapper>
-          <WhatsAppButton />
-        </Providers>
+    <html lang="en" suppressHydrationWarning className={`${bricolage.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body>
+        {children}
+        {modal}
+        {GA_ID && process.env.NODE_ENV === "production" && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
         <Analytics />
         <SpeedInsights />
       </body>
