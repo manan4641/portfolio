@@ -39,13 +39,18 @@ export default function Skills() {
       const st = state.current;
       st.catT = Math.min(1, st.catT + dt * 1.6); const k = 1 - Math.pow(1 - st.catT, 3);
       const c = CATS[st.cat], labels = c.short || c.skills, n = labels.length;
-      const cx = W / 2, cy = H / 2, R = Math.min(W * 0.4, H * 0.82) * (0.6 + 0.4 * k), f = R * 3.4, small = r.width < 640;
+      const small = r.width < 640;
+      // Mobile (< 640px): one tall shared orbit so pills stay evenly spaced and inside the canvas, and a larger core.
+      const cx = W / 2, cy = small ? H * 0.47 : H / 2, R = (small ? W * 0.34 : Math.min(W * 0.4, H * 0.82)) * (0.6 + 0.4 * k), f = R * 3.4;
+      const ys = small ? (H * 0.3) / (W * 0.34 * Math.sin(0.62)) : 1;
       g.clearRect(0, 0, W, H);
-      const rings = [{ r: 0.58, inc: 0.42, tz: 0.22, dir: 1 }, { r: 1, inc: 0.36, tz: -0.2, dir: -0.7 }];
+      const rings = small
+        ? [{ r: 1, inc: 0.62, tz: 0.1, dir: 1 }, { r: 1, inc: 0.62, tz: -0.1, dir: 1 }]
+        : [{ r: 0.58, inc: 0.42, tz: 0.22, dir: 1 }, { r: 1, inc: 0.36, tz: -0.2, dir: -0.7 }];
       type Ring = (typeof rings)[number];
       const proj = (ring: Ring, a: number) => {
         const x = Math.cos(a) * ring.r * R, z = Math.sin(a) * ring.r * R, y1 = z * Math.sin(ring.inc), z1 = z * Math.cos(ring.inc), co = Math.cos(ring.tz), s = Math.sin(ring.tz), sc = f / (f - z1);
-        return { x: cx + (x * co - y1 * s) * sc, y: cy + (x * s + y1 * co) * sc, z: z1, sc, t: "", ri: 0 };
+        return { x: cx + (x * co - y1 * s) * sc, y: cy + (x * s + y1 * co) * sc * ys, z: z1, sc, t: "", ri: 0 };
       };
       rings.forEach((ring, ri) => {
         g.beginPath();
@@ -53,15 +58,16 @@ export default function Skills() {
         g.strokeStyle = ri ? "rgba(246,180,14,.28)" : "rgba(117,170,219,.3)"; g.lineWidth = dpr; g.stroke();
       });
       const nodes = labels.map((t, i) => {
+        if (small) { const ri = i % 2, p = proj(rings[ri], rot + (i / n) * Math.PI * 2); p.t = t; p.ri = ri; return p; }
         const ri = n <= 3 ? 1 : i % 2, ring = rings[ri], cnt = n <= 3 ? n : ri ? Math.floor(n / 2) : Math.ceil(n / 2), idx = n <= 3 ? i : Math.floor(i / 2);
         const p = proj(ring, rot * ring.dir + (idx / cnt) * Math.PI * 2 + ri * 0.6); p.t = t; p.ri = ri; return p;
       }).sort((a, b) => a.z - b.z);
       const core = () => {
-        const cr = R * 0.24;
+        const cr = R * (small ? 0.48 : 0.24);
         let gr = g.createRadialGradient(cx, cy, 0, cx, cy, cr * 3.4); gr.addColorStop(0, "rgba(74,158,230,.42)"); gr.addColorStop(0.45, "rgba(47,127,208,.12)"); gr.addColorStop(1, "rgba(47,127,208,0)"); g.fillStyle = gr; g.beginPath(); g.arc(cx, cy, cr * 3.4, 0, 7); g.fill();
         gr = g.createRadialGradient(cx - cr * 0.35, cy - cr * 0.4, cr * 0.1, cx, cy, cr); gr.addColorStop(0, "#bfe0fb"); gr.addColorStop(0.5, "#3f8fd6"); gr.addColorStop(1, "#123a66"); g.fillStyle = gr; g.beginPath(); g.arc(cx, cy, cr, 0, 7); g.fill();
         g.fillStyle = "#fff"; g.textAlign = "center"; g.textBaseline = "middle";
-        const fs = Math.max(11, cr * 0.26); g.font = `700 ${fs}px ${FD}`;
+        const fs = Math.max(11, cr * (small ? 0.23 : 0.26)); g.font = `700 ${fs}px ${FD}`;
         const words = c.name.split(" "), lines: string[] = []; let ln = "";
         words.forEach((w) => { if (g.measureText(ln + " " + w).width > cr * 1.65 && ln) { lines.push(ln); ln = w; } else ln = ln ? ln + " " + w : w; }); lines.push(ln);
         g.save(); g.shadowColor = "rgba(4,10,20,.9)"; g.shadowBlur = fs * 0.7; g.shadowOffsetY = fs * 0.08; g.lineJoin = "round"; g.lineWidth = fs * 0.08; g.strokeStyle = "rgba(6,16,27,.45)";
@@ -73,7 +79,7 @@ export default function Skills() {
         if (!cored && p.z >= 0) { core(); cored = true; }
         const depth = (p.z / R + 1) / 2, a = (0.4 + 0.6 * depth) * k, fs = (small ? 11.5 : 14) * dpr * p.sc;
         g.font = `500 ${fs}px ${FB}`;
-        const tw = g.measureText(p.t).width, pw = tw + fs * 2.3, ph = fs * 2.2, x0 = p.x - pw / 2, y0 = p.y - ph / 2;
+        const tw = g.measureText(p.t).width, pw = tw + fs * 2.3, ph = fs * 2.2, x0 = small ? Math.max(4 * dpr, Math.min(W - pw - 4 * dpr, p.x - pw / 2)) : p.x - pw / 2, y0 = p.y - ph / 2;
         g.globalAlpha = a; g.beginPath(); g.roundRect(x0, y0, pw, ph, ph / 2); g.fillStyle = "rgba(15,22,33,.92)"; g.fill();
         g.strokeStyle = p.ri ? "rgba(249,200,70,.6)" : "rgba(140,196,242,.65)"; g.lineWidth = dpr; g.stroke();
         g.beginPath(); g.arc(x0 + fs * 0.95, p.y, fs * 0.26, 0, 7); g.fillStyle = p.ri ? "#f9c846" : "#9fd8ff"; g.fill();

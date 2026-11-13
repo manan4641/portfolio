@@ -4,17 +4,49 @@ import { useEffect, useState } from "react";
 import { EMAIL } from "@/data/site";
 import { track } from "@/lib/track";
 
-// mailto form, as in the design.
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+type Status = "idle" | "sending" | "sent" | "mailto" | "error";
+const NOTE: Record<Exclude<Status, "idle">, string> = {
+  sending: "Sending…",
+  sent: "Message sent. Thank you for reaching out! I'll get back to you shortly.",
+  mailto: "Your email app should now be open with the message ready to send.",
+  error: `Something went wrong sending your message. Please try again, or email ${EMAIL} directly.`,
+};
+
+// Sends through Web3Forms, like the previous site (same NEXT_PUBLIC_WEB3FORMS_KEY).
+// Without a key it falls back to the design's mailto behaviour.
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
-  const send = (e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<Status>("idle");
+  const send = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const f = new FormData(e.currentTarget);
+    if (status === "sending") return;
+    const form = e.currentTarget;
+    const f = new FormData(form);
     track("contact_form_submit", { location: "home_contact" });
-    window.location.href =
-      `mailto:${EMAIL}?subject=` + encodeURIComponent(String(f.get("subject"))) +
-      "&body=" + encodeURIComponent(f.get("message") + "\n\n" + f.get("name") + "\n" + f.get("email"));
-    setSent(true);
+    if (!WEB3FORMS_KEY) {
+      window.location.href =
+        `mailto:${EMAIL}?subject=` + encodeURIComponent(String(f.get("subject"))) +
+        "&body=" + encodeURIComponent(f.get("message") + "\n\n" + f.get("name") + "\n" + f.get("email"));
+      setStatus("mailto");
+      return;
+    }
+    setStatus("sending");
+    try {
+      const body = new FormData();
+      body.append("access_key", WEB3FORMS_KEY);
+      body.append("name", String(f.get("name")));
+      body.append("email", String(f.get("email")));
+      body.append("subject", `Portfolio - Abdul Manan: ${f.get("subject")}`);
+      body.append("message", String(f.get("message")));
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.message || "send failed");
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
   return (
     <form data-reveal="1" onSubmit={send} className="form">
@@ -24,8 +56,10 @@ export function ContactForm() {
       </div>
       <label>Subject<input name="subject" required /></label>
       <label>Message<textarea name="message" required rows={5} /></label>
-      <button type="submit">Send Message</button>
-      {sent && <div className="form__sent" role="status">Your email app should now be open with the message ready to send.</div>}
+      <button type="submit" disabled={status === "sending"}>{status === "sending" ? "Sending…" : "Send Message"}</button>
+      {status !== "idle" && status !== "sending" && (
+        <div className={"form__sent" + (status === "error" ? " form__sent--err" : "")} role="status">{NOTE[status]}</div>
+      )}
     </form>
   );
 }
