@@ -24,7 +24,10 @@ npm run build && npm start
 
 | Name | Needed for |
 |---|---|
-| `ANTHROPIC_API_KEY` | Ask AI widget. The button is hidden until this is set (rebuild after adding it). |
+| `ANTHROPIC_API_KEY` | Ask AI widget. The button is hidden until this or `LLM_RELAY_API_KEY` is set (rebuild after adding it). |
+| `LLM_RELAY_API_KEY` | Ask AI through api.llmsrelay.com instead. Used only when `ANTHROPIC_API_KEY` is not set. |
+| `LLM_RELAY_BASE_URL` | Optional. Relay address, default `https://api.llmsrelay.com` (no `/v1`). |
+| `LLM_RELAY_MODEL` | Optional. Model ID on the relay, default `claude-opus-5-5`. |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 (optional). Not loaded when unset. |
 
 ## Where things live

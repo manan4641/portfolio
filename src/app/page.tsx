@@ -23,7 +23,7 @@ const HEADLINE: "Primary" | "Alternative" = "Primary";
 const SHOW_AVAILABILITY = true;
 const ENABLE_3D = true;
 const CUSTOM_CURSOR = true;
-const ASK_AI = !!process.env.ANTHROPIC_API_KEY;
+const ASK_AI = !!(process.env.ANTHROPIC_API_KEY || process.env.LLM_RELAY_API_KEY);
 
 // Runs before the hero paints: shows the loader overlay and arms the intro animation.
 // Text stays in the HTML; CSS failsafes reveal everything after 8s if JS never runs.
