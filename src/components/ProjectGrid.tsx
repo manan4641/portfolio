@@ -11,7 +11,7 @@ export default function ProjectGrid() {
   const shown = PROJECTS.filter((p) => filter === "All" || p.cats.includes(filter));
   return (
     <>
-      <h1 className="ov__h">All Projects <span>{pad2(shown.length)}</span></h1>
+      <h1 className="ov__h">All Projects </h1>
       <div className="chips ov__chips">
         {PROJECT_FILTERS.map((f) => (
           <button key={f} onClick={() => setFilter(f)} className={"chip" + (f === filter ? " is-on" : "")} aria-pressed={f === filter}>{f}</button>
