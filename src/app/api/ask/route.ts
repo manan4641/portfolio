@@ -22,7 +22,9 @@ function limited(ip: string) {
 type Msg = { role: "user" | "assistant"; content: string };
 
 export async function POST(req: Request) {
-  if (!process.env.ANTHROPIC_API_KEY) return NextResponse.json({ text: FALLBACK }, { status: 503 });
+  const official = process.env.ANTHROPIC_API_KEY;
+  const relayKey = process.env.LLM_RELAY_API_KEY;
+  if (!official && !relayKey) return NextResponse.json({ text: FALLBACK }, { status: 503 });
   const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "local";
   if (limited(ip)) return NextResponse.json({ text: "You've asked a lot of questions in a short time. Please wait a few minutes, or email web.abdulmanan@gmail.com." }, { status: 429 });
 
@@ -36,17 +38,29 @@ export async function POST(req: Request) {
   while (messages.length && messages[0].role !== "user") messages = messages.slice(1);
   if (!messages.length || messages[messages.length - 1].role !== "user") return NextResponse.json({ text: FALLBACK }, { status: 400 });
 
-  const client = new Anthropic();
+  // ANTHROPIC_API_KEY (console.anthropic.com) wins when both are set. Otherwise the
+  // relay key is used against the relay's Anthropic-compatible /v1/messages endpoint,
+  // without the beta fallback options, which the relay may not support.
   try {
-    const response = await client.beta.messages.create({
-      model: "claude-opus-5-5",
-      max_tokens: 400,
-      output_config: { effort: "low" },
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",
-      system: SYSTEM,
-      messages,
-    });
+    const response = official
+      ? await new Anthropic({ apiKey: official }).beta.messages.create({
+          model: "claude-opus-5-5",
+          max_tokens: 400,
+          output_config: { effort: "low" },
+          betas: ["server-side-fallback-2026-07-01"],
+          fallbacks: "default",
+          system: SYSTEM,
+          messages,
+        })
+      : await new Anthropic({
+          apiKey: relayKey,
+          baseURL: process.env.LLM_RELAY_BASE_URL || "https://api.llmsrelay.com",
+        }).messages.create({
+          model: process.env.LLM_RELAY_MODEL || "claude-opus-5-5",
+          max_tokens: 400,
+          system: SYSTEM,
+          messages,
+        });
     if (response.stop_reason === "refusal") {
       return NextResponse.json({ text: "Sorry, I can't help with that. For anything about Abdul's work, email web.abdulmanan@gmail.com." });
     }
@@ -57,7 +71,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ text: text || "Sorry, I don't have an answer for that." });
   } catch (error) {
     if (error instanceof Anthropic.RateLimitError) console.error("[ask] rate limited");
-    else if (error instanceof Anthropic.AuthenticationError) console.error("[ask] invalid ANTHROPIC_API_KEY");
+    else if (error instanceof Anthropic.AuthenticationError) console.error(`[ask] invalid ${official ? "ANTHROPIC_API_KEY" : "LLM_RELAY_API_KEY"}`);
     else if (error instanceof Anthropic.APIError) console.error(`[ask] API error ${error.status}: ${error.message}`);
     else console.error("[ask]", error);
     return NextResponse.json({ text: FALLBACK }, { status: 502 });
